@@ -15,10 +15,18 @@
 
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+
   </head>
+  <style type="text/css">
+    .pull-right{
+      right: 0;
+      float: right;
+    }
+  </style>
   <body>
     <!-- Navigation -->
     <nav style="background-color: #0079c1" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      
       <div class="container">
         <a class="navbar-brand" href="index.php">Group 2 <img src="image/logo2.png" alt="image"> </a>
 
@@ -53,6 +61,7 @@
         </div>
       </div>
     </nav>
+  </nav>
     <!--slide-->
      <div class="container-fluid">
         <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -61,7 +70,7 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner" role="listbox" style="height: 400px">
               <div class="carousel-item active">
                 <img class="d-block img-fluid" src="image/banner1.jpg" alt="First slide">
               </div>
@@ -111,100 +120,14 @@
         </div>
         <!-- /.col-lg-3 -->
         <div class="col-lg-9">
-          
-
-          <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Three</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Four</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Five</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Six</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
+         <div class="row">
+          <div class="col-lg-12" style="background-color: #0079c1">
+          <h4 style="text-align: center;">View page</h4>
+          <iframe class="col-lg-12" height="500px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15524.979156752002!2d103.75245322074166!3d13.397163599241713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIzJzQ5LjgiTiAxMDPCsDQ1JzQwLjQiRQ!5e0!3m2!1sen!2sin!4v1524582723794" allowfullscreen></iframe>
           </div>
+         </div> 
+
+          
           <!-- /.row -->
         </div>
         <!-- /.col-lg-9 -->
