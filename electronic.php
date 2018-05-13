@@ -108,13 +108,10 @@
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-            <li><a href="#">Electroic</a></li>
-            <li><a href="#">Ladies Wears</a></li>
-            <li><a href="#">Men Wears</a></li>
-            <li><a href="#">Kids Wears</a></li>
-            <li><a href="#">Furnitures</a></li>
-            <li><a href="#">Home Appliance</a></li>
-            <li><a href="#">Electronic Gadget</a></li>
+            <li><a href="electronic.php">Electroic</a></li>
+            <li><a href="ladies.php">Ladies Wears</a></li>
+            <li><a href="man.php">Men Wears</a></li>
+            <li><a href="kids.php">Kids Wears</a></li>
             </ul>
           </div>
         </div>

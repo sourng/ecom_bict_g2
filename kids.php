@@ -15,10 +15,18 @@
 
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+
   </head>
+  <style type="text/css">
+    .pull-right{
+      right: 0;
+      float: right;
+    }
+  </style>
   <body>
     <!-- Navigation -->
     <nav style="background-color: #0079c1" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      
       <div class="container">
         <a class="navbar-brand" href="index.php">Group 2 <img src="image/logo2.png" alt="image"> </a>
 
@@ -53,6 +61,7 @@
         </div>
       </div>
     </nav>
+  </nav>
     <!--slide-->
      <div class="container-fluid">
         <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -61,7 +70,7 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner" role="listbox" style="height: 400px">
               <div class="carousel-item active">
                 <img class="d-block img-fluid" src="image/banner1.jpg" alt="First slide">
               </div>
@@ -99,96 +108,103 @@
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-            <li><a href="#">Electroic</a></li>
-            <li><a href="#">Ladies Wears</a></li>
-            <li><a href="#">Men Wears</a></li>
-            <li><a href="#">Kids Wears</a></li>
-            <li><a href="#">Furnitures</a></li>
-            <li><a href="#">Home Appliance</a></li>
-            <li><a href="#">Electronic Gadget</a></li>
+            <li><a href="electronic.php">Electroic</a></li>
+            <li><a href="ladies.php">Ladies Wears</a></li>
+            <li><a href="man.php">Men Wears</a></li>
+            <li><a href="kids.php">Kids Wears</a></li>
             </ul>
           </div>
         </div>
         <!-- /.col-lg-3 -->
         <div class="col-lg-9">
+         <div class="row">
+          <div class="col-lg-12" style="background-color: #0079c1">
+          <h4 style="text-align: center;">View page</h4>
+          </div>
+         </div> 
+
           <div class="row">
             <div class="col-lg-4 col-md-6 mb-4">
-              <h5>Title description, Dec 7, 2017</h5>
-              <a href="#"><img  src="image/d3.jpg" alt=""></a>
-              <p>Some text..</p>
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Item One11</a>
+                  </h4>
+                </div>
+                <div class="card-footer">
+                   <b>$24.99</b>
+                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
+                </div>
+              </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
                 <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Two</a>
+                    <a href="#">Item One11</a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                   <b>$24.99</b>
+                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
                 </div>
               </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="image/d4.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Three</a>
+                    <a href="#">Item One11</a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                   <b>$24.99</b>
+                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
+                </div>
+              </div>
+            </div>
+             <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Item One11</a>
+                  </h4>
+                </div>
+                <div class="card-footer">
+                   <b>$24.99</b>
+                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
                 </div>
               </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Four</a>
+                    <a href="#">Item One11</a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                   <b>$24.99</b>
+                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Five</a>
+                    <a href="#">Item One11</a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Six</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                   <b>$24.99</b>
+                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
                 </div>
               </div>
             </div>
