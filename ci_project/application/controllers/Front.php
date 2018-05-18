@@ -27,12 +27,12 @@ class Front extends CI_Controller {
     $this->load->view('front/register');
   }
    public function contact(){
-    $this->load->view('front/home');
+    $this->load->view('front/contact');
   }
 
   // customer-wishlist
     public function customer_wishlist(){
-    $this->load->view('front/customer-wishlist');
+    $this->load->view('front/customer_wishlist');
   }
 
     public function detail(){
@@ -40,20 +40,23 @@ class Front extends CI_Controller {
   }
 
 
-    public function customer_orders(){
-    $this->load->view('front/customer-orders');
-  }
+  //  public function customer_wishlist(){
+  //  $this->load->view('front/customer_wishlist');
+  //}
 
-    public function customer_order(){
-    $this->load->view('front/customer-order');
+    public function customer_orders(){
+    $this->load->view('front/customer_orders');
   }
 
     public function customer_account(){
-    $this->load->view('front/customer-account');
+    $this->load->view('front/customer_account');
   }
 
     public function basket(){
     $this->load->view('front/basket');
+  }
+    public function category(){
+    $this->load->view('front/category');
   }
 
     public function checkout1(){

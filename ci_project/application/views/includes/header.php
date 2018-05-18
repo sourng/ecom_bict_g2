@@ -17,21 +17,21 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
-    <link href="<?php echo base_url(); ?>public/asset/css/font-awesome.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>public/asset/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>public/asset/css/animate.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>public/asset/css/owl.carousel.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>public/asset/css/owl.theme.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>template/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>template/css/animate.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>template/css/owl.carousel.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>template/css/owl.theme.css" rel="stylesheet">
 
     <!-- theme stylesheet -->
-    <link href="<?php echo base_url(); ?>public/asset/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="<?php echo base_url(); ?>template/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
-    <link href="<?php echo base_url(); ?>public/asset/css/custom.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>template/css/custom.css" rel="stylesheet">
 
-    <script src="<?php echo base_url(); ?>public/asset/js/respond.min.js"></script>
+    <script src="<?php echo base_url(); ?>template/js/respond.min.js"></script>
 
-    <link rel="<?php echo base_url(); ?>public/asset/shortcut icon" href="favicon.png">
+    <link rel="<?php echo base_url(); ?>template/shortcut icon" href="favicon.png">
 
 
 

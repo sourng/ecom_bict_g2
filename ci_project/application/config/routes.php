@@ -52,8 +52,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Front';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['loin'] = 'front/loin';
-
-// customer-wishlist
-
-$route['customer-wishlist.html'] = 'front/customer_wishlis';
+$route['login.html'] = 'front/login';
+$route['home.html'] = 'front/home';
+//$route['customer-wishlist.html'] = 'front/customer_wishlis';
+$route['register.html'] = 'front/register';
+$route['contact.html'] = 'front/contact';
+$route['customer-wishlist.html'] = 'front/customer_wishlist';
+$route['detail.html'] = 'front/detail';
+$route['customer_orders.html'] = 'front/customer_orders';
+$route['customer-account.html'] = 'front/customer_account';
+$route['basket.html'] = 'front/basket';
+$route['category.html'] = 'front/category';
+$route['checkout1.html'] = 'front/checkout1';
+$route['checkout2.html'] = 'front/checkout2';
+$route['checkout3.html'] = 'front/checkout3';
+$route['checkout4.html'] = 'front/checkout4';
