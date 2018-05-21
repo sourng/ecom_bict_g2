@@ -206,7 +206,7 @@
                                             <ul>
                                                 <li><a href="<?php echo site_url(); ?>register.html">Register / login</a>
                                                 </li>
-                                                <li><a href="<?php echo site_url(); ?>customer_orders.html">Orders history</a>
+                                                <li><a href="<?php echo site_url(); ?>customer_orders.html">customer orders</a>
                                                 </li>
                                                 <li><a href="<?php echo site_url(); ?>customer-wishlist.html">Wishlist</a>
                                                 </li>
