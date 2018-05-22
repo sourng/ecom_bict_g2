@@ -191,13 +191,7 @@
                                             <ul>
                                                 <li><a href="<?php echo site_url(); ?>home.html">Homepage</a>
                                                 </li>
-                                                <li><a href="<?php echo site_url(); ?>category.html">Category - sidebar left</a>
-                                                </li>
-                                                <li><a href="<?php echo site_url(); ?>category-right.html">Category - sidebar right</a>
-                                                </li>
-                                                <li><a href="<?php echo site_url(); ?>category-full.html">Category - full width</a>
-                                                </li>
-                                                <li><a href="<?php echo site_url(); ?>detail.html">Product detail</a>
+                                                <li><a href="<?php echo site_url(); ?>category.html">Category</a>
                                                 </li>
                                             </ul>
                                         </div>

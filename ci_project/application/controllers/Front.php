@@ -5,21 +5,15 @@ class Front extends CI_Controller {
       parent::__construct();      
       $this->load->helper('text');
       $this->load->database();      
-
+      $this->load->model('m_crud', '', true); 
       date_default_timezone_set('Asia/Phnom_Penh');
   }
   
   public function index(){    
-    //$param1 : is for list/add/edit/delete
-    //$param2 : is for condition
-    $data=array();
-    $this->load->view('front/home');
-    
+    $data['product']=$this->m_crud->get_by_sql('Select * from tbl_product');
+    $this->load->view('front/home',$data);    
   } 
 
-  public function home(){
-    $this->load->view('front/home');
-  }
    public function login(){
     $this->load->view('front/login');
   }
@@ -36,7 +30,11 @@ class Front extends CI_Controller {
   }
 
     public function detail(){
-    $this->load->view('front/detail');
+      $data['category']=$this->m_crud->get_by_sql('Select * from tbl_category');
+      $data['detail']=$this->m_crud->get_by_sql('Select * from tbl_product where pro_id='.$_GET['pro_id']);
+       $data['product']=$this->m_crud->get_by_sql('Select * from tbl_product where pro_id<>'.$_GET['pro_id']);
+      $data['brand']=$this->m_crud->get_by_sql('Select * from tbl_brand');
+    $this->load->view('front/detail',$data);
   }
 
 
@@ -56,7 +54,10 @@ class Front extends CI_Controller {
     $this->load->view('front/basket');
   }
     public function category(){
-    $this->load->view('front/category');
+      $data['category']=$this->m_crud->get_by_sql('Select * from tbl_category');
+      $data['brand']=$this->m_crud->get_by_sql('Select * from tbl_brand');
+       $data['product']=$this->m_crud->get_by_sql('Select * from tbl_product');
+      $this->load->view('front/category',$data);
   }
 
     public function checkout1(){

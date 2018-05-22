@@ -22,14 +22,6 @@
             	<?php $this->load->view('includes/product'); ?>
                 <!-- /.container -->
             </div>
-            <!-- /#hot -->
-            <div class="box">
-                    <div class="container">
-                        <div class="col-md-12">
-                            <h2 style="text-align: center;" >Hot this week</h2>
-                        </div>
-                    </div>
-            </div>
             <div class="container">
                 <div class="col-md-12" data-animate="fadeInUp">
                     <?php $this->load->view('includes/contant'); ?>

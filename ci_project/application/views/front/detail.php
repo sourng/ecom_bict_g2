@@ -23,25 +23,17 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <!-- *** MENUS AND FILTERS ***-->
-                    <div class="panel panel-default sidebar-menu">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Categories</h3>
-                        </div>
-                        <?php $this->load->view('includes/category_left'); ?>
-                    </div>
-                    <?php $this->load->view('includes/brand'); ?>
-                    <?php $this->load->view('includes/colour'); ?>
-
+                       <!-- *** MENUS AND FILTERS *** -->
+                    <?php $this->load->view('includes/menu_sidebar'); ?>
+                   <?php $this->load->view('includes/brand'); ?>
+                   <?php $this->load->view('includes/colour'); ?>
                     <!-- *** MENUS AND FILTERS END *** -->
                 </div>
                 <div class="col-md-9">
                     <?php $this->load->view('includes/view_detail'); ?>
-                   
                     <?php $this->load->view('includes/descript_detail'); ?>
                    <!-- Detail product --> 
-                   <?php $this->load->view('includes/detail'); ?>
-                   <?php $this->load->view('includes/detail'); ?>
+                   
                     <!-- End Detail product -->                  
                 </div>
                 <!-- /.col-md-9 -->
@@ -51,8 +43,7 @@
         <!-- /#content -->
         <!-- *** FOOTER ***-->
 <?php $this->load->view('includes/footer'); ?>
-    <!-- *** SCRIPTS TO INCLUDE ***
- _________________________________________________________ -->
+    <!-- *** SCRIPTS TO INCLUDE ***-->
     <script src="<?php echo base_url('template'); ?>/js/jquery-1.11.0.min.js"></script>
     <script src="<?php echo base_url('template'); ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('template'); ?>/js/jquery.cookie.js"></script>

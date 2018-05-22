@@ -50,15 +50,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'Front';
-$route['404_override'] = '';
+$route['404_override'] = 'E404';
 $route['translate_uri_dashes'] = FALSE;
 $route['login.html'] = 'front/login';
-$route['home.html'] = 'front/home';
+$route['home.html'] = 'front';
 //$route['customer-wishlist.html'] = 'front/customer_wishlis';
 $route['register.html'] = 'front/register';
 $route['contact.html'] = 'front/contact';
 $route['customer-wishlist.html'] = 'front/customer_wishlist';
 $route['detail.html'] = 'front/detail';
+//$route['detail.html/(:any)'] = 'front/detail/$1';
 $route['customer_orders.html'] = 'front/customer_orders';
 $route['customer-account.html'] = 'front/customer_account';
 $route['basket.html'] = 'front/basket';

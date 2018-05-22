@@ -41,18 +41,19 @@
 
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked">
-                                <li>
-                                    <a href="<?php echo site_url(); ?>text.html">Text page</a>
+                                <li class="active">
+                                    <a href="customer-orders.html"><i class="fa fa-list"></i> My orders</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url(); ?>contact.html">Contact page</a>
+                                    <a href="customer-wishlist.html"><i class="fa fa-heart"></i> My wishlist</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url(); ?>faq.html">FAQ</a>
+                                    <a href="customer-account.html"><i class="fa fa-user"></i> My account</a>
                                 </li>
-
+                                <li>
+                                    <a href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
+                                </li>
                             </ul>
-
                         </div>
                     </div>
 
@@ -111,54 +112,14 @@
 
                         <hr>
 
-                        <div id="map">
-
+                        <div class="col-sm-12">
+                            <iframe style="width: 100%; height: 500px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15524.979156752002!2d103.75245322074166!3d13.397163599241713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIzJzQ5LjgiTiAxMDPCsDQ1JzQwLjQiRQ!5e0!3m2!1sen!2sin!4v1524582723794" allowfullscreen></iframe>
                         </div>
 
                         <hr>
                         <h2>Contact form</h2>
 
-                        <form>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="firstname">Firstname</label>
-                                        <input type="text" class="form-control" id="firstname">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="lastname">Lastname</label>
-                                        <input type="text" class="form-control" id="lastname">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="text" class="form-control" id="email">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="subject">Subject</label>
-                                        <input type="text" class="form-control" id="subject">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="message">Message</label>
-                                        <textarea id="message" class="form-control"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send message</button>
-
-                                </div>
-                            </div>
-                            <!-- /.row -->
-                        </form>
-
+                      <?php $this->load->view('includes/contact_form'); ?>
 
                     </div>
 

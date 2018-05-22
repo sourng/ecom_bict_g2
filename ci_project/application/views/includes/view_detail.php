@@ -1,28 +1,16 @@
+<?php foreach ($detail as $row) { ?>
 <div class="row" id="productMain">
                         <div class="col-sm-6">
                             <div id="mainImage">
-                                <img src="<?php echo base_url('template'); ?>/img/detailbig1.jpg" alt="" class="img-responsive">
+                                <img src="<?php echo base_url($row['pro_feature']); ?>" alt="" style="width: 100%;height: 400px;">
                             </div>
-
-                            <div class="ribbon sale">
-                                <div class="theribbon">SALE</div>
-                                <div class="ribbon-background"></div>
-                            </div>
-                            <!-- /.ribbon -->
-
-                            <div class="ribbon new">
-                                <div class="theribbon">NEW</div>
-                                <div class="ribbon-background"></div>
-                            </div>
-                            <!-- /.ribbon -->
-
                         </div>
                         <div class="col-sm-6">
                             <div class="box">
-                                <h1 class="text-center">White Blouse Armani</h1>
+                                <h1 class="text-center"><?php echo $row['pro_name'] ?></h1>
                                 <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material & care and sizing</a>
                                 </p>
-                                <p class="price">$124.00</p>
+                                <p class="price">$<?php echo $row['price'] ?></p>
 
                                 <p class="text-center buttons">
                                     <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
@@ -33,22 +21,36 @@
                             </div>
 
                             <div class="row" id="thumbs">
-                                <div class="col-xs-4">
-                                    <a href="<?php echo base_url('template'); ?>/img/detailbig1.jpg" class="thumb">
-                                        <img src="<?php echo base_url('template'); ?>/img/detailsquare.jpg" alt="" class="img-responsive">
-                                    </a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <a href="<?php echo base_url('template'); ?>/img/detailbig2.jpg" class="thumb">
-                                        <img src="<?php echo base_url('template'); ?>/img/detailsquare2.jpg" alt="" class="img-responsive">
-                                    </a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <a href="<?php echo base_url('template'); ?>/img/detailbig3.jpg" class="thumb">
-                                        <img src="<?php echo base_url('template'); ?>/img/detailsquare3.jpg" alt="" class="img-responsive">
-                                    </a>
-                                </div>
+
+                          <?php    
+                          $dir = glob($row['pro_img_folder']."/*.*");
+
+                        for ($i=0; $i<3; $i++)
+                          {
+                            $image_name = $dir[$i];
+                            $supported_format = array('gif','jpg','jpeg','png');
+                            $ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
+                            if (in_array($ext, $supported_format))
+                                { ?>
+                                    <div class="col-xs-4">
+                                        <a href="<?php echo $image_name ;?>" class="thumb">
+                                            <img src="<?php echo $image_name ;?>" alt=""  style="width: 100%;height: 100px;">
+                                        </a>
+                                    </div>
+                                 
+                              <?php  
+                          } else {
+                                  continue;
+                                }                         
+                         } ?>
+                
+
+           
+                               
+                                
+                               
                             </div>
                         </div>
 
                     </div>
+<?php } ?>                    
