@@ -19,6 +19,7 @@
                         </div>
                     </div>
                 </div>
+                
             	<?php $this->load->view('includes/product'); ?>
                 <!-- /.container -->
             </div>

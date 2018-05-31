@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration date="2018/05/30" author="e.World Technology Ltd.">
+  <project id="{F31CE0FC-C728-4B81-A272-512B856E388F}" file="" name="project1" product="PHPMaker" version="14.0" datetime="2018/05/30 09:22:07" languagefolder="phplang" userlevel="-2,&quot;Anonymous&quot;,0;">
+    <table id="slide" name="slide" caption="slide" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_brand" name="tbl_brand" caption="tbl brand" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_cart" name="tbl_cart" caption="tbl cart" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_category" name="tbl_category" caption="tbl category" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_color" name="tbl_color" caption="tbl color" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_customer" name="tbl_customer" caption="tbl customer" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_order" name="tbl_order" caption="tbl order" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_order_detail" name="tbl_order_detail" caption="tbl order detail" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_product" name="tbl_product" caption="tbl product" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="tbl_product_category" name="tbl_product_category" caption="tbl product category" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+  </project>
+</configuration>

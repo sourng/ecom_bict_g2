@@ -31,10 +31,7 @@
                 </div>
                 <div class="col-md-9">
                     <?php $this->load->view('includes/view_detail'); ?>
-                    <?php $this->load->view('includes/descript_detail'); ?>
-                   <!-- Detail product --> 
-                   
-                    <!-- End Detail product -->                  
+                    <?php $this->load->view('includes/descript_detail'); ?>                  
                 </div>
                 <!-- /.col-md-9 -->
             </div>

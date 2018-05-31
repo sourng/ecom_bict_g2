@@ -1,3 +1,6 @@
+<?php foreach ($lastcartid as $row) {
+    $lastcartid=$row['lastcartid'];
+} ?>
 <?php foreach ($detail as $row) { ?>
 <div class="row" id="productMain">
                         <div class="col-sm-6">
@@ -13,7 +16,7 @@
                                 <p class="price">$<?php echo $row['price'] ?></p>
 
                                 <p class="text-center buttons">
-                                    <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
+                                    <a onclick="increment_quantity(<?php echo $lastcartid?>,<?php echo $row['pro_id'] ?>)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
                                     <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
                                 </p>
 
@@ -53,4 +56,7 @@
                         </div>
 
                     </div>
-<?php } ?>                    
+<?php } ?>  
+<?php $this->load->view('includes/function_js'); ?>                  
+
+ 

@@ -21,7 +21,7 @@
                 </div>
                <?php $this->load->view('includes/shopping_cart'); ?>
                 <!-- /.col-md-9 -->
-                <?php $this->load->view('includes/order_sumary'); ?>
+             
                 <!-- /.col-md-3 -->
             </div>
             <!-- /.container -->

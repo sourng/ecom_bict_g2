@@ -1,3 +1,5 @@
+  <?php foreach ($total as $row) {?>
+                                        
  <div class="col-md-3">
 
                     <div class="box" id="order-summary">
@@ -11,19 +13,19 @@
                                 <tbody>
                                     <tr>
                                         <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <th>$<?php echo number_format($row['total'],2) ?></th>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and handling</td>
+                                        <td>Delivery service</td>
                                         <th>$10.00</th>
                                     </tr>
                                     <tr>
                                         <td>Tax</td>
-                                        <th>$0.00</th>
+                                        <th>$3.00</th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <th>$<?php echo number_format($row['total']+10+3,2) ?></th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -32,3 +34,4 @@
                     </div>
 
                 </div>
+                <?php  } ?>

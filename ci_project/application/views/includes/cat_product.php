@@ -1,6 +1,11 @@
+<?php foreach ($lastcartid as $row) {
+    $lastcartid=$row['lastcartid'];
+} ?>
 <div class="col-md-9">
                     <div class="box">
-                        <h1>Ladies</h1>
+                        <h1><?php foreach ($category_name as $row) {
+                            echo $row['cat_name'];
+                        } ?></h1>
                         <p>In our Ladies department we offer wide selection of the best products we have found and carefully selected worldwide.</p>
                     </div>
 
@@ -60,7 +65,7 @@
                                     <p class="price">$<?php echo ($row['price']); ?></p>
                                     <p class="buttons">
                                         <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>" class="btn btn-default">View detail</a>
-                                        <a href="<?php echo site_url(); ?>basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        <a onclick="increment_quantity(<?php echo $lastcartid ?>,<?php echo $row['pro_id'] ?>)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </p>
                                 </div>
                                 <!-- /.text -->
@@ -97,3 +102,4 @@
 
 
                 </div>
+<?php $this->load->view('includes/function_js'); ?>
