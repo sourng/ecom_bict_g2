@@ -1,3 +1,8 @@
+<?php 
+  include_once('./db/dbconf.php');
+  include_once('./class/class.crud.php');
+  $objCrud = new crud($DB_con);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include_once('includes/header.php') ?>

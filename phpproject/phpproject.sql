@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2018 at 05:25 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.8
+-- Generation Time: May 30, 2018 at 05:37 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -27,23 +29,25 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `slide` (
-  `slide_id` int(11) NOT NULL,
-  `image` varchar(250) DEFAULT NULL,
-  `upload_date` datetime DEFAULT NULL,
-  `delete_date` datetime DEFAULT NULL,
-  `user_create` varchar(250) DEFAULT NULL,
-  `slide_status` enum('Y','N') DEFAULT 'Y'
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '1',
+  `deleted` tinyint(4) DEFAULT '1',
+  `create_date` timestamp NULL DEFAULT NULL,
+  `updated_date` datetime DEFAULT NULL,
+  `user_create` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `slide`
 --
 
-INSERT INTO `slide` (`slide_id`, `image`, `upload_date`, `delete_date`, `user_create`, `slide_status`) VALUES
-(1, 'main-slider1.jpg', '2018-05-23 11:03:23', '2018-05-23 11:03:25', NULL, 'Y'),
-(2, 'main-slider2.jpg', '2018-05-23 11:03:23', '2018-05-23 11:03:25', NULL, 'Y'),
-(3, 'main-slider3.jpg', '2018-05-23 11:03:23', '2018-05-23 11:03:25', NULL, 'Y'),
-(4, 'main-slider4.jpg', '2018-05-23 11:03:23', '2018-05-23 11:03:25', NULL, 'Y');
+INSERT INTO `slide` (`id`, `name`, `picture`, `status`, `deleted`, `create_date`, `updated_date`, `user_create`) VALUES
+(1, 'picture', '001.jpg', 1, 1, '2018-05-22 17:00:00', '2018-05-23 00:00:00', 'sreymom'),
+(2, 'picture', '002.jpg', 1, 1, '2018-05-22 17:00:00', '2018-05-23 00:00:00', 'sreymom'),
+(3, 'picture', '003.jpg', 1, 1, '2018-05-22 17:00:00', '2018-05-23 00:00:00', 'sreymom'),
+(4, 'picture', '004.jpg', 1, 1, '2018-05-22 17:00:00', '2018-05-23 00:00:00', 'sreymom');
 
 -- --------------------------------------------------------
 
@@ -65,27 +69,6 @@ INSERT INTO `tbl_brand` (`bnd_id`, `bnd_name`) VALUES
 (2, 'Versace'),
 (3, 'Carlo Bruni'),
 (4, 'Jack Honey');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_cart`
---
-
-CREATE TABLE `tbl_cart` (
-  `cart_id` int(11) NOT NULL,
-  `pro_id` int(11) DEFAULT NULL,
-  `ip` varchar(50) DEFAULT NULL,
-  `date_and_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tbl_cart`
---
-
-INSERT INTO `tbl_cart` (`cart_id`, `pro_id`, `ip`, `date_and_time`) VALUES
-(46, 4, '::1', '2018-05-29 05:24:46'),
-(49, 4, '::1', '2018-05-29 06:07:41');
 
 -- --------------------------------------------------------
 
@@ -164,6 +147,15 @@ CREATE TABLE `tbl_order` (
   `order_detail` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `tbl_order`
+--
+
+INSERT INTO `tbl_order` (`order_id`, `cus_id`, `order_detail`) VALUES
+(1, 1, NULL),
+(2, 1, NULL),
+(3, 1, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -175,8 +167,17 @@ CREATE TABLE `tbl_order_detail` (
   `order_id` int(11) DEFAULT NULL,
   `pro_id` int(11) DEFAULT NULL,
   `price` varchar(250) DEFAULT NULL,
-  `discount` varchar(250) DEFAULT NULL
+  `list` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_order_detail`
+--
+
+INSERT INTO `tbl_order_detail` (`ord_id`, `order_id`, `pro_id`, `price`, `list`) VALUES
+(1, 1, 1, NULL, NULL),
+(2, 2, 1, NULL, NULL),
+(3, 3, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -190,7 +191,7 @@ CREATE TABLE `tbl_product` (
   `pro_name` varchar(250) DEFAULT NULL,
   `pro_feature` varchar(250) DEFAULT NULL,
   `pro_img_folder` varchar(250) DEFAULT NULL,
-  `pro_detail` longtext,
+  `pro_detail` varchar(250) DEFAULT NULL,
   `price` varchar(250) DEFAULT NULL,
   `pro_keyword` varchar(250) DEFAULT NULL,
   `pro_status` enum('Y','N') DEFAULT 'Y',
@@ -202,13 +203,13 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`pro_id`, `pro_cat_id`, `pro_name`, `pro_feature`, `pro_img_folder`, `pro_detail`, `price`, `pro_keyword`, `pro_status`, `col_id`) VALUES
-(1, 1, 'MAN SHIRTS', 'upload/001/1.jpg', 'upload/001', '', '12.34', NULL, 'Y', 0),
-(2, 1, 'MAN PANTS', 'upload/002/1.jpg', 'upload/002', ' ', '12.35', NULL, 'Y', 0),
-(3, 2, 'LADIES PANTS', 'upload/003/1.jpg', 'upload/003', ' ', '12.45', NULL, 'Y', 0),
-(4, 2, 'LADIES T-SHIRTS', 'upload/004/1.jpg', 'upload/004', ' ', '14.56', NULL, 'Y', 0),
-(5, 1, 'MAN T-SHIRTS', 'upload/005/1.jpg', 'upload/005', ' ', '56.15', NULL, 'Y', 0),
-(6, 3, 'KID SHIRTS', 'upload/006/1.jpg', 'upload/006', ' ', '34.67', NULL, 'Y', 0),
-(7, 2, 'LADIES', 'upload/007/1.jpg', 'upload/007', ' ', '89.56', NULL, 'Y', 0);
+(1, 1, 'MAN SHIRTS', 'upload/001/1.jpg', 'upload/001', NULL, '12.50', NULL, 'Y', 0),
+(2, 1, 'MAN PANTS', 'upload/002/1.jpg', 'upload/002', NULL, '25.80', NULL, 'Y', 0),
+(3, 1, 'LADIES PANTS', 'upload/003/1.jpg', 'upload/003', NULL, '13.67', NULL, 'Y', 0),
+(4, 1, 'LADIES T-SHIRTS', 'upload/004/1.jpg', 'upload/004', NULL, '56.89', NULL, 'Y', 0),
+(5, 1, 'MAN T-SHIRTS', 'upload/005/1.jpg', 'upload/005', NULL, '89.34', NULL, 'Y', 0),
+(6, 1, 'KID SHIRTS', 'upload/006/1.jpg', 'upload/006', NULL, '65.56', NULL, 'Y', 0),
+(7, 1, 'LADIES', 'upload/007/1.jpg', 'upload/007', NULL, '89.34', NULL, 'Y', 0);
 
 -- --------------------------------------------------------
 
@@ -238,20 +239,13 @@ INSERT INTO `tbl_product_category` (`pro_cat_id`, `pro_cat_name`) VALUES
 -- Indexes for table `slide`
 --
 ALTER TABLE `slide`
-  ADD PRIMARY KEY (`slide_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   ADD PRIMARY KEY (`bnd_id`);
-
---
--- Indexes for table `tbl_cart`
---
-ALTER TABLE `tbl_cart`
-  ADD PRIMARY KEY (`cart_id`),
-  ADD KEY `FK_tbl_cart_tbl_product` (`pro_id`);
 
 --
 -- Indexes for table `tbl_category`
@@ -307,61 +301,59 @@ ALTER TABLE `tbl_product_category`
 -- AUTO_INCREMENT for table `slide`
 --
 ALTER TABLE `slide`
-  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   MODIFY `bnd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `tbl_cart`
---
-ALTER TABLE `tbl_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
 --
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `tbl_color`
 --
 ALTER TABLE `tbl_color`
   MODIFY `col_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
   MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `tbl_order_detail`
 --
 ALTER TABLE `tbl_order_detail`
-  MODIFY `ord_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ord_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
   MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `tbl_product_category`
 --
 ALTER TABLE `tbl_product_category`
   MODIFY `pro_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `tbl_cart`
---
-ALTER TABLE `tbl_cart`
-  ADD CONSTRAINT `FK_tbl_cart_tbl_product` FOREIGN KEY (`pro_id`) REFERENCES `tbl_product` (`pro_id`);
 
 --
 -- Constraints for table `tbl_order`
@@ -370,10 +362,18 @@ ALTER TABLE `tbl_order`
   ADD CONSTRAINT `FK__customer` FOREIGN KEY (`cus_id`) REFERENCES `tbl_customer` (`cus_id`);
 
 --
+-- Constraints for table `tbl_order_detail`
+--
+ALTER TABLE `tbl_order_detail`
+  ADD CONSTRAINT `FK__order` FOREIGN KEY (`order_id`) REFERENCES `tbl_order` (`order_id`),
+  ADD CONSTRAINT `FK_order_detail_product_category` FOREIGN KEY (`pro_id`) REFERENCES `tbl_product_category` (`pro_cat_id`);
+
+--
 -- Constraints for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
   ADD CONSTRAINT `FK_tbl_product_tbl_product_category` FOREIGN KEY (`pro_cat_id`) REFERENCES `tbl_product_category` (`pro_cat_id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

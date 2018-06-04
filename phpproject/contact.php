@@ -1,22 +1,12 @@
+<?php 
+  include_once('./db/dbconf.php');
+  include_once('./class/class.crud.php');
+  $objCrud = new crud($DB_con);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Shop Homepage - Start Bootstrap Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-
-  </head>
+<?php include_once('includes/header.php'); ?>
   <style type="text/css">
     .pull-right{
       right: 0;
@@ -25,197 +15,41 @@
   </style>
   <body>
     <!-- Navigation -->
-    <nav style="background-color: #0079c1" class="navbar navbar-expand-lg navbar-dark fixed-top">
-      
-      <div class="container">
-        <a class="navbar-brand" href="index.php">Group 2 <img src="image/logo2.png" alt="image"> </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <h5>
-            <li class="nav-item active">              
-              <a class="nav-link" href="index.php">Home
-                <span class="sr-only">(current)</span>
-              </a>            
-            </li>
-            </h5>
-            <h5>
-            <li class="nav-item">
-              <a class="nav-link" href="about.php">About</a>
-            </li>
-            </h5>
-            <h5>
-            <li class="nav-item">
-              <a class="nav-link" href="product.php">product</a>
-            </li>
-            </h5>
-            <h5>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
-            </li>
-            </h5>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </nav>
+  <?php include_once('includes/navbar.php') ?>
     <!--slide-->
      <div class="container-fluid">
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox" style="height: 400px">
-              <div class="carousel-item active">
-                <img class="d-block img-fluid" src="image/banner1.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="image/banner2.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="image/banner3.jpg" alt="Third slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.446769403083!2d103.77025079948223!3d13.38463933796815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31101057a73dab2f%3A0x7f0148d3468ee26e!2sUnnamed+Road%2C+Cambodia!5e0!3m2!1sen!2sus!4v1527871703458" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
       <!--End slide-->
-    <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <h5>KANHA</h5>
-          <h5>ANH</h5>
-          <h5>SREYMOM</h5>
-          <!--<div class="list-group">
-            <a href="#" class="list-group-item">Category 1</a>
-            <a href="#" class="list-group-item">Category 2</a>
-            <a href="#" class="list-group-item">Category 3</a>
-          </div>-->
-          ​<div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-            <li><a href="electronic.php">Electroic</a></li>
-            <li><a href="ladies.php">Ladies Wears</a></li>
-            <li><a href="man.php">Men Wears</a></li>
-            <li><a href="kids.php">Kids Wears</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- /.col-lg-3 -->
-        <div class="col-lg-9">
-         <div class="row">
-          <div class="col-lg-12" style="background-color: #0079c1">
-          <h4 style="text-align: center;">View page</h4>
-          </div>
-         </div> 
-
-          <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One11</a>
-                  </h4>
-                </div>
-                <div class="card-footer">
-                   <b>$24.99</b>
-                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One11</a>
-                  </h4>
-                </div>
-                <div class="card-footer">
-                   <b>$24.99</b>
-                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One11</a>
-                  </h4>
-                </div>
-                <div class="card-footer">
-                   <b>$24.99</b>
-                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
-                </div>
-              </div>
-            </div>
-             <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One11</a>
-                  </h4>
-                </div>
-                <div class="card-footer">
-                   <b>$24.99</b>
-                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One11</a>
-                  </h4>
-                </div>
-                <div class="card-footer">
-                   <b>$24.99</b>
-                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
-                </div>
-              </div>
-            </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="image/d3.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One11</a>
-                  </h4>
-                </div>
-                <div class="card-footer">
-                   <b>$24.99</b>
-                  <button class="btn btn-primary pull-right"><i class="fa fa-cart"></i> Add​ to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.col-lg-9 -->
-      </div>
-      <!-- /.row -->
+<div class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>Siem Reap,Cambodia </p>
+      <p><span class="glyphicon glyphicon-phone"></span> +855967585037</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> kanhapc.com@gmail.com</p> 
     </div>
-    <!-- /.container -->
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label for="Name">Contact Name</label>
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="Email">Email Contact</label>
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-primary pull-right" type="submit">SEND US</button>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">

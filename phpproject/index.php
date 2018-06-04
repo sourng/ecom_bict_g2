@@ -1,6 +1,12 @@
+
+<?php 
+  include_once('./db/dbconf.php');
+  include_once('./class/class.crud.php');
+  $objCrud = new crud($DB_con);
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once('includes/header.php') ?>
+<?php include_once('includes/header.php'); ?>
   <style type="text/css">
     .pull-right{
       right: 0;
@@ -9,9 +15,9 @@
   </style>
   <body>
     <!-- Navigation -->
-    <?php include_once('includes/navbar.php') ?>
+    <?php include_once('includes/navbar.php'); ?>
     <!--slide-->
-    <?php include_once('includes/slider.php') ?>
+    <?php include_once('includes/slider.php'); ?>
       <!--End slide-->
     <!-- Page Content -->
     <div class="container">
@@ -25,7 +31,7 @@
             <a href="#" class="list-group-item">Category 2</a>
             <a href="#" class="list-group-item">Category 3</a>
           </div>-->
-          ​<?php include_once('includes/drop_down_menu.php') ?>
+          ​<?php include_once('includes/drop_down_menu.php'); ?>
         </div>
         <!-- /.col-lg-3 -->
         <div class="col-lg-9">
@@ -36,7 +42,7 @@
          </div> 
 
           <div class="row">
-            <?php include_once('includes/view_page.php') ?>
+            <?php include_once('includes/view_page.php'); ?>
           <!-- /.row -->
           </div>
         <!-- /.col-lg-9 -->

@@ -1,10 +1,15 @@
-	   <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-            <li><a href="electronic.php">Electroic</a></li>
-            <li><a href="ladies.php">Ladies Wears</a></li>
-            <li><a href="man.php">Men Wears</a></li>
-            <li><a href="kids.php">Kids Wears</a></li>
-            </ul>
-        </div>
+ 
+  <h2><button type="button" class="btn btn-primary">Categories</button></h2>           
+  <table class="table table-hover">
+    <tbody>
+           <?php 
+
+        $sql="SELECT * from tbl_category";
+
+        $records_per_page=5;
+        $newquery = $objCrud->paging($sql,$records_per_page);
+        $objCrud->category($newquery);
+         // $crud->getBlog($sql);
+  ?>
+    </tbody>
+  </table>
