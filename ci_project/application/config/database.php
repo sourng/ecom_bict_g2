@@ -78,11 +78,8 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-<<<<<<< HEAD
 	'database' => 'ecom_bict_g2',
-=======
 	'database' => 'group2',
->>>>>>> ee00283642a1d9f864bdc11e6b5b1da30252e6b9
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
