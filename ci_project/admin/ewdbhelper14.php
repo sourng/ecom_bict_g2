@@ -19,20 +19,20 @@ if (!function_exists('DbHelper')) {
 			$langid = "";
 			$info = $args[0];
 		}
-		$dbclass = "cci_project_db";
+		$dbclass = "cgroup2_db";
 		$dbhelper = new $dbclass($langfolder, $langid, $info);
 		return $dbhelper;
 	}
 }
 
-class cci_project_db extends cDbHelper {
+class cgroup2_db extends cDbHelper {
 
 	// Database connection info
 	var $Host = 'localhost';
 	var $Port = 3306;
 	var $Username = 'root';
 	var $Password = '';
-	var $DbName = 'ci_project';
+	var $DbName = 'group2';
 	var $CharSet = "utf-8";
 
 	// ADODB (Access/SQL Server)

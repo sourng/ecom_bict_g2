@@ -16,7 +16,7 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>  <span class="cartcount"></span> items in cart
                     </a>
                 </div>
             </div>
@@ -36,14 +36,10 @@
                                         <div class="col-sm-3">
                                             <h5>Clothing</h5>
                                             <ul>
-                                                <li><a href="<?php echo site_url(); ?>category.html">T-shirts</a>
+                                                <?php foreach ($category as $row) {?>
+                                                <li><a href="<?php echo site_url('category.html/?cat='.$row['cat_id']); ?>"><?php echo $row['cat_name'] ?></a>
                                                 </li>
-                                                <li><a href="<?php echo site_url(); ?>category.html">Shirts</a>
-                                                </li>
-                                                <li><a href="<?php echo site_url(); ?>category.html">Pants</a>
-                                                </li>
-                                                <li><a href="<?php echo site_url(); ?>category.html">Accessories</a>
-                                                </li>
+                                               <?php } ?>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
@@ -213,13 +209,7 @@
                                             <ul>
                                                 <li><a href="<?php echo site_url(); ?>basket.html">Shopping cart</a>
                                                 </li>
-                                                <li><a href="<?php echo site_url(); ?>checkout1.html">Checkout - step 1</a>
-                                                </li>
-                                                <li><a href="<?php echo site_url(); ?>checkout2.html">Checkout - step 2</a>
-                                                </li>
-                                                <li><a href="<?php echo site_url(); ?>checkout3.html">Checkout - step 3</a>
-                                                </li>
-                                                <li><a href="<?php echo site_url(); ?>checkout4.html">Checkout - step 4</a>
+                                                <li><a href="<?php echo site_url(); ?>checkout1.html">Checkout - step by step</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -244,7 +234,7 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="<?php echo site_url(); ?>basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="<?php echo site_url(); ?>basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="cartcount"><?php echo count($this->cart->contents()); ?> </span> items in cart</a>
                 </div>
                 <!--/.nav-collapse -->
 

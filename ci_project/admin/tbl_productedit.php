@@ -21,7 +21,7 @@ class ctbl_product_edit extends ctbl_product {
 	var $PageID = 'edit';
 
 	// Project ID
-	var $ProjectID = '{F31CE0FC-C728-4B81-A272-512B856E388F}';
+	var $ProjectID = '{6AF8C2FF-A16C-4050-9229-E3A572D6C974}';
 
 	// Table name
 	var $TableName = 'tbl_product';
@@ -937,6 +937,9 @@ class ctbl_product_edit extends ctbl_product {
 		// Check if validation required
 		if (!EW_SERVER_VALIDATE)
 			return ($gsFormError == "");
+		if (!ew_CheckInteger($this->pro_id->FormValue)) {
+			ew_AddMessage($gsFormError, $this->pro_id->FldErrMsg());
+		}
 		if (!ew_CheckInteger($this->pro_cat_id->FormValue)) {
 			ew_AddMessage($gsFormError, $this->pro_cat_id->FldErrMsg());
 		}
@@ -1178,6 +1181,9 @@ ftbl_productedit.Validate = function() {
 	for (var i = startcnt; i <= rowcnt; i++) {
 		var infix = ($k[0]) ? String(i) : "";
 		$fobj.data("rowindex", infix);
+			elm = this.GetElements("x" + infix + "_pro_id");
+			if (elm && !ew_CheckInteger(elm.value))
+				return this.OnError(elm, "<?php echo ew_JsEncode2($tbl_product->pro_id->FldErrMsg()) ?>");
 			elm = this.GetElements("x" + infix + "_pro_cat_id");
 			if (elm && !ew_CheckInteger(elm.value))
 				return this.OnError(elm, "<?php echo ew_JsEncode2($tbl_product->pro_cat_id->FldErrMsg()) ?>");
@@ -1239,7 +1245,7 @@ $tbl_product_edit->ShowMessage();
 <div class="ewEditDiv"><!-- page* -->
 <?php if ($tbl_product->pro_id->Visible) { // pro_id ?>
 	<div id="r_pro_id" class="form-group">
-		<label id="elh_tbl_product_pro_id" class="<?php echo $tbl_product_edit->LeftColumnClass ?>"><?php echo $tbl_product->pro_id->FldCaption() ?></label>
+		<label id="elh_tbl_product_pro_id" for="x_pro_id" class="<?php echo $tbl_product_edit->LeftColumnClass ?>"><?php echo $tbl_product->pro_id->FldCaption() ?></label>
 		<div class="<?php echo $tbl_product_edit->RightColumnClass ?>"><div<?php echo $tbl_product->pro_id->CellAttributes() ?>>
 <span id="el_tbl_product_pro_id">
 <span<?php echo $tbl_product->pro_id->ViewAttributes() ?>>
@@ -1291,10 +1297,14 @@ $tbl_product_edit->ShowMessage();
 <?php } ?>
 <?php if ($tbl_product->pro_detail->Visible) { // pro_detail ?>
 	<div id="r_pro_detail" class="form-group">
-		<label id="elh_tbl_product_pro_detail" for="x_pro_detail" class="<?php echo $tbl_product_edit->LeftColumnClass ?>"><?php echo $tbl_product->pro_detail->FldCaption() ?></label>
+		<label id="elh_tbl_product_pro_detail" class="<?php echo $tbl_product_edit->LeftColumnClass ?>"><?php echo $tbl_product->pro_detail->FldCaption() ?></label>
 		<div class="<?php echo $tbl_product_edit->RightColumnClass ?>"><div<?php echo $tbl_product->pro_detail->CellAttributes() ?>>
 <span id="el_tbl_product_pro_detail">
-<textarea data-table="tbl_product" data-field="x_pro_detail" name="x_pro_detail" id="x_pro_detail" cols="35" rows="4" placeholder="<?php echo ew_HtmlEncode($tbl_product->pro_detail->getPlaceHolder()) ?>"<?php echo $tbl_product->pro_detail->EditAttributes() ?>><?php echo $tbl_product->pro_detail->EditValue ?></textarea>
+<?php ew_AppendClass($tbl_product->pro_detail->EditAttrs["class"], "editor"); ?>
+<textarea data-table="tbl_product" data-field="x_pro_detail" name="x_pro_detail" id="x_pro_detail" cols="20" rows="4" placeholder="<?php echo ew_HtmlEncode($tbl_product->pro_detail->getPlaceHolder()) ?>"<?php echo $tbl_product->pro_detail->EditAttributes() ?>><?php echo $tbl_product->pro_detail->EditValue ?></textarea>
+<script type="text/javascript">
+ew_CreateEditor("ftbl_productedit", "x_pro_detail", 20, 4, <?php echo ($tbl_product->pro_detail->ReadOnly || FALSE) ? "true" : "false" ?>);
+</script>
 </span>
 <?php echo $tbl_product->pro_detail->CustomMsg ?></div></div>
 	</div>

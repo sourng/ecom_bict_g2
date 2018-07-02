@@ -5,7 +5,7 @@
     var inputQuantityElement = $("#input-quantity-" + lastcart_id);
     var newQuantity = parseInt($(inputQuantityElement).val()) + 1;
     $(inputQuantityElement).val(newQuantity);
-    save_to_db(lastcart_id, pro_id,'add');
+   // save_to_db(lastcart_id, pro_id,'add');
 
 
 }
@@ -16,7 +16,7 @@ function decrement_quantity(lastcart_id,pro_id) {
         var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
         $(inputQuantityElement).val(newQuantity);
         
-        save_to_db(lastcart_id, pro_id ,'delete');
+       // save_to_db(lastcart_id, pro_id ,'delete');
        
     }
 }

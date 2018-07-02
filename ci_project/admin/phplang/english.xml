@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<ew-language date="2018/5/30" version="14.0.0" id="en" name="English" desc="English" author="e.World Technology Ltd.">
+<ew-language date="2018/6/6" version="14.0.0" id="en" name="English" desc="English" author="e.World Technology Ltd.">
   <!-- 
 	*** Important Notes:
 	1. Language ID should follow: https://developers.google.com/recaptcha/docs/language,
@@ -616,7 +616,8 @@
     <!-- v2017 -->
   </global>
   <project>
-    <phrase id="footertext" value="Group 2" />
+    <phrase id="bodytitle" value="Group2" />
+    <phrase id="footertext" value="All Reght Group2" />
     <menu id="1">
       <phrase id="menutext" value="slide" />
     </menu>

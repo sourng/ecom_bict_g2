@@ -8,7 +8,7 @@
 
                         <hr>
 
-                        <form action="<?php echo site_url(); ?>customer_orders.html" method="post">
+                        <!-- <form action="<?php// echo site_url(); ?>customer_orders.html" method="post">
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email">
@@ -20,6 +20,27 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                             </div>
-                        </form>
+                        </form>     -->     
+
+            <form method="post" action="<?php echo base_url(); ?>main/login_validation">  
+                <div class="form-group">  
+                     <label>Enter Email</label>  
+                     <input type="text" name="email" class="form-control" />  
+                     <span class="text-danger"><?php echo form_error('email'); ?></span>                 
+                </div>  
+                <div class="form-group">  
+                     <label>Enter Password</label>  
+                     <input type="password" name="password" class="form-control" />  
+                     <span class="text-danger"><?php echo form_error('password'); ?></span>  
+                </div>  
+                <div class="form-group">  
+                     <input type="submit" name="insert" value="Login" class="btn btn-info" />  
+                     <?php  
+                          echo '<label class="text-danger">'.$this->session->flashdata
+
+("error").'</label>';  
+                     ?>  
+                </div>  
+           </form> 
                     </div>
                 </div>

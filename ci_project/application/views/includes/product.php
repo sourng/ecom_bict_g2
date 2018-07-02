@@ -7,18 +7,18 @@
                                     <div class="flipper">
                                         <div class="front">
                                     <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>">
-                                                <img src="<?php echo base_url($row['pro_feature']); ?>" alt="" class="img-responsive">
+                                                <img src="<?php echo base_url("upload/product/".$row['pro_feature']); ?>" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
                                             <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>">
-                                                <img src="<?php echo base_url($row['pro_feature']); ?>" alt="" class="img-responsive">
+                                                <img src="<?php echo base_url ("upload/product/".$row['pro_feature']); ?>" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>" class="invisible">
-                                    <img src="<?php echo base_url($row['pro_feature']); ?>" alt="" class="img-responsive">
+                                    <img src="<?php echo base_url("upload/product/".$row['pro_feature']); ?>" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
                                     <h3><a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>"><?php echo ($row['pro_name']); ?></a></h3>

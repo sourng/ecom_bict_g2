@@ -21,7 +21,7 @@ class ctbl_product_add extends ctbl_product {
 	var $PageID = 'add';
 
 	// Project ID
-	var $ProjectID = '{F31CE0FC-C728-4B81-A272-512B856E388F}';
+	var $ProjectID = '{6AF8C2FF-A16C-4050-9229-E3A572D6C974}';
 
 	// Table name
 	var $TableName = 'tbl_product';
@@ -1235,10 +1235,14 @@ $tbl_product_add->ShowMessage();
 <?php } ?>
 <?php if ($tbl_product->pro_detail->Visible) { // pro_detail ?>
 	<div id="r_pro_detail" class="form-group">
-		<label id="elh_tbl_product_pro_detail" for="x_pro_detail" class="<?php echo $tbl_product_add->LeftColumnClass ?>"><?php echo $tbl_product->pro_detail->FldCaption() ?></label>
+		<label id="elh_tbl_product_pro_detail" class="<?php echo $tbl_product_add->LeftColumnClass ?>"><?php echo $tbl_product->pro_detail->FldCaption() ?></label>
 		<div class="<?php echo $tbl_product_add->RightColumnClass ?>"><div<?php echo $tbl_product->pro_detail->CellAttributes() ?>>
 <span id="el_tbl_product_pro_detail">
-<textarea data-table="tbl_product" data-field="x_pro_detail" name="x_pro_detail" id="x_pro_detail" cols="35" rows="4" placeholder="<?php echo ew_HtmlEncode($tbl_product->pro_detail->getPlaceHolder()) ?>"<?php echo $tbl_product->pro_detail->EditAttributes() ?>><?php echo $tbl_product->pro_detail->EditValue ?></textarea>
+<?php ew_AppendClass($tbl_product->pro_detail->EditAttrs["class"], "editor"); ?>
+<textarea data-table="tbl_product" data-field="x_pro_detail" name="x_pro_detail" id="x_pro_detail" cols="20" rows="4" placeholder="<?php echo ew_HtmlEncode($tbl_product->pro_detail->getPlaceHolder()) ?>"<?php echo $tbl_product->pro_detail->EditAttributes() ?>><?php echo $tbl_product->pro_detail->EditValue ?></textarea>
+<script type="text/javascript">
+ew_CreateEditor("ftbl_productadd", "x_pro_detail", 20, 4, <?php echo ($tbl_product->pro_detail->ReadOnly || FALSE) ? "true" : "false" ?>);
+</script>
 </span>
 <?php echo $tbl_product->pro_detail->CustomMsg ?></div></div>
 	</div>

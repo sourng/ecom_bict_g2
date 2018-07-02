@@ -26,6 +26,111 @@ class crud
     
   }
   
+public function SaveToCart($ip,$pro_id, $product,$qty, $unit_price,$discount,$amount,$image)
+  {
+    try
+    {
+      $stmt = $this->db->prepare("INSERT INTO cart(ip,pro_id, product,qty, unit_price,discount,amount,image) VALUES(:ip,:pro_id, :product,:qty,:unit_price,:discount,:amount,:image)");
+      $stmt->bindparam(":ip",$ip);
+      $stmt->bindparam(":pro_id",$pro_id);
+      $stmt->bindparam(":product",$product);
+      $stmt->bindparam(":qty",$qty);
+      $stmt->bindparam(":unit_price",$unit_price);
+      $stmt->bindparam(":discount",$discount);
+       $stmt->bindparam(":amount",$amount);
+        $stmt->bindparam(":image",$image);
+      $stmt->execute();
+      return true;
+    }
+    catch(PDOException $e)
+    {
+      echo $e->getMessage();  
+      return false;
+    }
+    
+  }
+
+  // Update Cart
+  public function updateCart($ip,$pro_id,$qty, $unit_price,$amount)
+  {
+    try
+    {
+      $stmt=$this->db->prepare("UPDATE cart SET qty=:qty,amount=:amount
+                          WHERE pro_id=:pro_id AND ip=:ip ");
+      $stmt->bindparam(":qty",$qty);
+      $stmt->bindparam(":amount",$amount);     
+      $stmt->bindparam(":pro_id",$pro_id);
+      $stmt->bindparam(":ip",$ip);
+      $stmt->execute();
+      
+      return true;  
+    }
+    catch(PDOException $e)
+    {
+      echo $e->getMessage();  
+      return false;
+    }
+  }
+
+  // View Cart
+  public function viewCart($query)
+  {
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+  
+    if($stmt->rowCount()>0)
+    {
+      while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+      {
+        ?>  
+        <tr>
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="image/<?php echo $row['image']; ?>" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="#"><?php echo $row['product']; ?></a></h4>
+                                <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
+                                <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                            </div>
+                        </div>
+                     </td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <input type="email" class="form-control" id="exampleInputEmail1" value="<?php echo $row['total_qty']; ?>">
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>$<?php echo $row['unit_price']; ?></strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>$<?php echo $row['unit_price']*$row['total_qty']; ?></strong></td>
+                        <td class="col-sm-1 col-md-1">
+                        <button type="button" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span> Remove
+                        </button></td>
+                    </tr>
+
+          <?php
+      }
+      ?>
+       <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Subtotal</h5></td>
+                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+                    </tr>
+
+      <?php
+    }
+    else
+    {
+      ?>
+            
+            <p>No Data..</p>
+            
+            <?php
+    }
+    
+  }
+
+
+
   public function getID($id)
   {
     $stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE id=:id");
@@ -33,6 +138,24 @@ class crud
     $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
     return $editRow;
   }
+
+// function Check Exist Cart
+   public function checkExistCart($query)
+  {
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();  
+    if($stmt->rowCount()>0)
+    {
+      echo 'taken';
+    }
+    else
+    {
+      echo 'not_taken';
+    }    
+  }
+
+
+
 
   public function getID_Detail($id)
   {
@@ -91,10 +214,10 @@ class crud
       
           <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="detail.php"><img class="card-img-top" src="./image/<?php print($row['picture']); ?>" alt=""></a>
+                <a href="detail.php?p=<?php echo $row['pro_id'] ?>"><img class="card-img-top" src="./image/<?php print($row['picture']); ?>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="detail.php"><?php print($row['pro_name']); ?></a>
+                    <a href="detail.php?p=<?php echo $row['pro_id'] ?>"><?php print($row['pro_name']); ?></a>
                   </h4>
                 </div>
                 <div class="card-footer">
@@ -147,6 +270,140 @@ class crud
     
   }
   //End Category
+// Get IP
+  function getRealIpAddr()
+{
+    if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
+    {
+      $ip=$_SERVER['HTTP_CLIENT_IP'];
+    }
+    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))   //to check ip is pass from proxy
+    {
+      $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    else
+    {
+      $ip=$_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
+  //view detail
+  public function view_detail($query)
+  {
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+  
+    if($stmt->rowCount()>0)
+    {
+      while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+      {
+
+
+        $ip=$this->getRealIpAddr();
+        $pro_id=$row['pro_id'];
+        $product=$row['pro_name'];
+        $qty=1;
+        $unit_price=$row['price'];
+        $discount=$row['discount'];
+        $amount=($unit_price-(($unit_price*$discount)/100));
+        $image=$row['picture'];
+
+        ?>
+
+<form>
+
+<input type="hidden" name="ip" id="ip" value="<?php echo $ip; ?>">
+<input type="hidden" name="pro_id" id="pro_id" value="<?php echo $pro_id; ?>">
+<input type="hidden" name="product" id="product" value="<?php echo $product; ?>">
+<input type="hidden" name="qty" id="qty" value="<?php echo $qty; ?>">
+<input type="hidden" name="unit_price" id="unit_price" value="<?php echo $unit_price; ?>">
+<input type="hidden" name="discount" id="discount" value="<?php echo $discount; ?>">
+<input type="hidden" name="amount" id="amount" value="<?php echo $amount; ?>">
+<input type="hidden" name="image" id="image" value="<?php echo $image; ?>">
+
+  
+  <div class="card">
+<div class="container">
+<div class="wrapper row">
+  <div class="preview col-md-6">
+    
+    <div class="preview-pic tab-content">
+      <div class="tab-pane active" id="pic-1"><img src="./image/<?php print($row['picture']); ?>" /></div>
+      <div class="tab-pane" id="pic-2"><img src="./image/<?php print($row['picture2']); ?>" /></div>
+      <div class="tab-pane" id="pic-3"><img src="./image/<?php print($row['picture3']); ?>" /></div>
+      <div class="tab-pane" id="pic-4"><img src="./image/<?php print($row['picture4']); ?>" /></div>
+      <div class="tab-pane" id="pic-5"><img src="./image/<?php print($row['picture5']); ?>" /></div>
+    </div>
+
+    
+<ul class="preview-thumbnail nav nav-tabs">
+  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="./image/<?php print($row['picture']); ?>" /></a></li>
+  <li><a data-target="#pic-2" data-toggle="tab"><img src="./image/<?php print($row['picture2']); ?>" /></a></li>
+  <li><a data-target="#pic-3" data-toggle="tab"><img src="./image/<?php print($row['picture3']); ?>" /></a></li>
+  <li><a data-target="#pic-4" data-toggle="tab"><img src="./image/<?php print($row['picture4']); ?>" /></a></li>
+  <li><a data-target="#pic-5" data-toggle="tab"><img src="./image/<?php print($row['picture5']); ?>" /></a></li>
+</ul>
+    
+  </div>
+  <div class="details col-md-6">
+    <h3 class="product-title">men's shoes fashion</h3>
+    <div class="rating">
+      <div class="stars">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
+      <span class="review-no">41 reviews</span>
+    </div>
+    <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+    <h4 class="price">current price: <span>$<?php echo $row['price']; ?></span></h4>
+    <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+    <h5 class="sizes">sizes:
+      <span class="size" data-toggle="tooltip" title="small">s</span>
+      <span class="size" data-toggle="tooltip" title="medium">m</span>
+      <span class="size" data-toggle="tooltip" title="large">l</span>
+      <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+    </h5>
+    <h5 class="colors">colors:
+      <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+      <span class="color green"></span>
+      <span class="color blue"></span>
+    </h5>
+    <div class="action">
+      <button id="button" class="add-to-cart btn btn-default" type="button">add to cart</button>
+      <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+</form>
+
+
+
+
+      
+
+
+          <?php
+      }
+    }
+    else
+    {
+      ?>
+            
+            <p>No Data..</p>
+            
+            <?php
+    }
+    
+  }
+  //End view detail
   //pro_detail
  public function pro_detail($query)
   {
@@ -161,7 +418,7 @@ class crud
       
           <div class="col-md-3 col-sm-6">
         <span class="thumbnail">
-            <a href="detail.php"><img src="./image/<?php print($row['picture']); ?>" alt="">
+            <a href="detail.php?p=<?php echo $row['pro_id'] ?>"><img src="./image/<?php print($row['picture']); ?>" alt="">
             </a>
             <div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>

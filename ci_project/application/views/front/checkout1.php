@@ -29,7 +29,7 @@
                 <div class="col-md-9" id="checkout">
 
                     <div class="box">
-                        <?php $this->load->view('includes/checkout_order_view1'); ?>
+                     <?php $this->load->view('includes/checkout_order'); ?>
                     </div>
                     <!-- /.box -->
                 </div>

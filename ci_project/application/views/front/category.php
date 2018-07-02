@@ -49,5 +49,86 @@
     <script src="<?php echo base_url('template'); ?>/js/bootstrap-hover-dropdown.js"></script>
     <script src="<?php echo base_url('template'); ?>/js/owl.carousel.min.js"></script>
     <script src="<?php echo base_url('template'); ?>/js/front.js"></script>
+
+    <script>
+            $(document).ready(function(){
+             
+             $('.add_cart').click(function(){
+              var pro_id = $(this).data("pro_id");
+              var pro_name = $(this).data("pro_name");
+              var price = $(this).data("price");
+              var pro_feature = $(this).data("pro_feature");
+              // var img = $(this).data("img");
+
+              // var quantity = $('#' + product_id).val();
+              var quantity = 1;
+              if(quantity != '' && quantity > 0)
+              {
+               $.ajax({
+                url:"<?php echo base_url(); ?>shopping/add",
+                method:"POST",
+                data:{pro_id:pro_id, pro_name:pro_name, price:price, quantity:quantity,pro_feature:pro_feature},
+                success:function(data)
+                {
+                 alert("Product Added into Cart");
+                 $('#cart_details').html(data);
+                 $('#' + pro_id).val('');
+
+                 $(".cartcount").text(data);
+                }
+               });
+              }
+              else
+              {
+               alert("Please Enter quantity");
+              }
+             });
+
+             $('#cart_details').load("<?php echo base_url(); ?>shopping_cart/load");
+
+             $(document).on('click', '.remove_inventory', function(){
+              var row_id = $(this).attr("id");
+              if(confirm("Are you sure you want to remove this?"))
+              {
+               $.ajax({
+                url:"<?php echo base_url(); ?>shopping_cart/remove",
+                method:"POST",
+                data:{row_id:row_id},
+                success:function(data)
+                {
+                 alert("Product removed from Cart");
+                 $('#cart_details').html(data);
+                 $(".cartcount").text(data);
+                }
+               });
+              }
+              else
+              {
+               return false;
+              }
+             });
+
+             $(document).on('click', '#clear_cart', function(){
+              if(confirm("Are you sure you want to clear cart?"))
+              {
+               $.ajax({
+                url:"<?php echo base_url(); ?>shopping_cart/clear",
+                success:function(data)
+                {
+                 alert("Your cart has been clear...");
+                 $('#cart_details').html(data);
+
+                 $(".cartcount").text(data);
+                }
+               });
+              }
+              else
+              {
+               return false;
+              }
+             });
+
+            });
+</script>
 </body>
 </html>

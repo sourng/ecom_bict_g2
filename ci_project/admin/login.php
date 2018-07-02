@@ -20,7 +20,7 @@ class clogin {
 	var $PageID = 'login';
 
 	// Project ID
-	var $ProjectID = '{F31CE0FC-C728-4B81-A272-512B856E388F}';
+	var $ProjectID = '{6AF8C2FF-A16C-4050-9229-E3A572D6C974}';
 
 	// Page object name
 	var $PageObjName = 'login';
@@ -624,9 +624,6 @@ $login->ShowMessage();
 	</div>
 	<div class="form-group">
 		<div><input type="password" name="password" id="password" class="form-control ewControl" placeholder="<?php echo ew_HtmlEncode($Language->Phrase("Password")) ?>"></div>
-	</div>
-	<div class="checkbox">
-		<label for="rememberme"><input type="checkbox" name="type" id="rememberme" value="a"<?php if ($login->LoginType == "a") { ?> checked<?php } ?>><?php echo $Language->Phrase("RememberMe") ?></label>
 	</div>
 	<button class="btn btn-primary ewButton" name="btnsubmit" id="btnsubmit" type="submit"><?php echo $Language->Phrase("Login") ?></button>
 <?php

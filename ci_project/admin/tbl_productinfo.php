@@ -51,7 +51,7 @@ class ctbl_product extends cTable {
 		$this->BasicSearch = new cBasicSearch($this->TableVar);
 
 		// pro_id
-		$this->pro_id = new cField('tbl_product', 'tbl_product', 'x_pro_id', 'pro_id', '`pro_id`', '`pro_id`', 3, -1, FALSE, '`pro_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'NO');
+		$this->pro_id = new cField('tbl_product', 'tbl_product', 'x_pro_id', 'pro_id', '`pro_id`', '`pro_id`', 3, -1, FALSE, '`pro_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
 		$this->pro_id->Sortable = TRUE; // Allow sort
 		$this->pro_id->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['pro_id'] = &$this->pro_id;

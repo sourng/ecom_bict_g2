@@ -1,4 +1,4 @@
-  <?php foreach ($total as $row) {?>
+ 
                                         
  <div class="col-md-3">
 
@@ -13,7 +13,8 @@
                                 <tbody>
                                     <tr>
                                         <td>Order subtotal</td>
-                                        <th>$<?php echo number_format($row['total'],2) ?></th>
+                                        <!-- <?php //echo $grand_total[0]['pro_detail']; ?> -->
+                                        <th>$<!-- <?php //echo($row['total'],2) ?> --></th>
                                     </tr>
                                     <tr>
                                         <td>Delivery service</td>
@@ -25,7 +26,7 @@
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$<?php echo number_format($row['total']+10+3,2) ?></th>
+                                        <th>$<!-- <?php //echo number_format($row['total']+10+3,2) ?> --></th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -34,4 +35,4 @@
                     </div>
 
                 </div>
-                <?php  } ?>
+             

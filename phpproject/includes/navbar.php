@@ -30,7 +30,23 @@
               <a class="nav-link" href="contact.php">Contact</a>
             </li>
             </h5>
+            <h5>
+            <li class="nav-item">
+              <a class="nav-link" href="sign_in.php">Sign In</a>
+            </li>
+            </h5>
+            <h5>
+            <li class="nav-item">
+              <a class="nav-link" href="sign_up.php">Sign Up</a>
+            </li>
+            </h5>
+            <h5>
+            <li class="nav-item">
+              <a class="nav-link" href="addcart.php">Add Cart</a>
+            </li>
+            </h5>
           </ul>
         </div>
       </div>
     </nav>
+    

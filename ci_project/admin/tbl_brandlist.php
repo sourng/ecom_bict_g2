@@ -21,7 +21,7 @@ class ctbl_brand_list extends ctbl_brand {
 	var $PageID = 'list';
 
 	// Project ID
-	var $ProjectID = '{F31CE0FC-C728-4B81-A272-512B856E388F}';
+	var $ProjectID = '{6AF8C2FF-A16C-4050-9229-E3A572D6C974}';
 
 	// Table name
 	var $TableName = 'tbl_brand';

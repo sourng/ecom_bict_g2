@@ -21,7 +21,7 @@ class cslide_view extends cslide {
 	var $PageID = 'view';
 
 	// Project ID
-	var $ProjectID = '{F31CE0FC-C728-4B81-A272-512B856E388F}';
+	var $ProjectID = '{6AF8C2FF-A16C-4050-9229-E3A572D6C974}';
 
 	// Table name
 	var $TableName = 'slide';
@@ -471,6 +471,9 @@ class cslide_view extends cslide {
 		// Check modal
 		if ($this->IsModal)
 			$gbSkipHeaderFooter = TRUE;
+
+		// Load current record
+		$bLoadCurrentRecord = FALSE;
 		$sReturnUrl = "";
 		$bMatchRecord = FALSE;
 		if ($this->IsPageRequest()) { // Validate request

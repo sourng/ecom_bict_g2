@@ -38,5 +38,10 @@
     <script src="<?php echo base_url('template') ?>/js/bootstrap-hover-dropdown.js"></script>
     <script src="<?php echo base_url('template') ?>/js/owl.carousel.min.js"></script>
     <script src="<?php echo base_url('template') ?>/js/front.js"></script>
+    <script type="text/javascript">
+        var total = parseFloat($('#for-sum-in-total>div').html());
+            total += total;
+            $('th#total').html(total);
+    </script>
 </body>
 </html>

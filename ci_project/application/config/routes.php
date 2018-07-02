@@ -53,6 +53,7 @@ $route['default_controller'] = 'Front';
 $route['404_override'] = 'E404';
 $route['translate_uri_dashes'] = FALSE;
 $route['login.html'] = 'front/login';
+/*$route['log_in.html'] = 'front/log_in';*/
 $route['home.html'] = 'front';
 //$route['customer-wishlist.html'] = 'front/customer_wishlis';
 $route['register.html'] = 'front/register';

@@ -12,9 +12,12 @@ if (!isset($Language)) {
 <head>
 	<title><?php echo $Language->ProjectPhrase("BodyTitle") ?></title>
 <meta charset="utf-8">
+<?php if (@$gsExport == "" || @$gsExport == "print") { ?>
 <link rel="stylesheet" type="text/css" href="<?php echo $EW_RELATIVE_PATH ?>bootstrap3/css/<?php echo ew_CssFile("bootstrap.css") ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo $EW_RELATIVE_PATH ?>adminlte/css/<?php echo ew_CssFile("AdminLTE.css") ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo $EW_RELATIVE_PATH ?>adminlte/css/font-awesome.min.css"><!-- Optional font -->
+<?php } ?>
+<?php if (@$gsExport == "" || @$gsExport == "print") { ?>
 <link rel="stylesheet" type="text/css" href="<?php echo $EW_RELATIVE_PATH ?>phpcss/jquery.fileupload.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $EW_RELATIVE_PATH ?>phpcss/jquery.fileupload-ui.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $EW_RELATIVE_PATH ?>colorbox/colorbox.css">
@@ -25,6 +28,8 @@ if (!isset($Language)) {
 ?>
 <link rel="stylesheet" type="text/css" href="<?php echo $cssfile ?>">
 <?php } ?>
+<?php } ?>
+<?php if (@$gsExport == "" || @$gsExport == "print") { ?>
 <?php if (ew_IsResponsiveLayout()) { ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php } ?>
@@ -35,6 +40,8 @@ if (!isset($Language)) {
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>jquery/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>jquery/jquery.storageapi.min.js"></script>
+<?php } ?>
+<?php if (@$gsExport == "" || @$gsExport == "print") { ?>
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>bootstrap3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>adminlte/js/adminlte.js"></script>
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>jquery/jquery.fileDownload.min.js"></script>
@@ -94,11 +101,15 @@ var EW_DEBUG_ENABLED = <?php echo (EW_DEBUG_ENABLED) ? "true" : "false" ?>;
 var EW_CONFIRM_CANCEL = true;
 var EW_SEARCH_FILTER_OPTION = "<?php echo EW_SEARCH_FILTER_OPTION ?>";
 </script>
+<?php } ?>
+<?php if (@$gsExport == "" || @$gsExport == "print") { ?>
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>phpjs/jsrender.min.js"></script>
 <script type="text/javascript">
 $.views.settings.debugMode(EW_DEBUG_ENABLED);
 </script>
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>phpjs/ewp14.js"></script>
+<?php } ?>
+<?php if (@$gsExport == "" || @$gsExport == "print") { ?>
 <script type="text/javascript">
 <?php
 	echo $Language->ToJson();
@@ -107,15 +118,19 @@ $.views.settings.debugMode(EW_DEBUG_ENABLED);
 ?>
 var ewVar = <?php echo json_encode($EW_CLIENT_VAR); ?>;
 </script>
+<script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>phpjs/eweditor.js"></script>
 <script type="text/javascript" src="<?php echo $EW_RELATIVE_PATH ?>phpjs/userfn14.js"></script>
 <script type="text/javascript">
 
 // Write your client script here, no need to add script tags.
 </script>
+<?php } ?>
 <meta name="generator" content="PHPMaker v2018.0.8">
 </head>
 <body class="<?php echo $EW_BODY_CLASS ?>" dir="<?php echo ($EW_CSS_FLIP) ? "rtl" : "ltr" ?>">
 <?php if (@!$gbSkipHeaderFooter) { ?>
+<?php if (@$gsExport == "") { ?>
 <div class="wrapper ewLayout">
 	<!-- Main Header -->
 	<header class="main-header">
@@ -124,7 +139,7 @@ var ewVar = <?php echo json_encode($EW_CLIENT_VAR); ?>;
 			<!-- mini logo for sidebar mini 50x50 pixels -->
 			<span class="logo-mini"></span>
 			<!-- logo for regular state and mobile devices -->
-			<span class="logo-lg">Ci Project</span>
+			<span class="logo-lg"><img src="<?php echo $EW_RELATIVE_PATH ?>phpimages/Untitled-3.png" alt=""></span>
 		</div>
 		<!-- Header Navbar -->
 		<nav class="navbar navbar-static-top" role="navigation">
@@ -159,4 +174,5 @@ var ewVar = <?php echo json_encode($EW_CLIENT_VAR); ?>;
 <?php } ?>
 		<!-- Main content -->
 		<section class="content">
+<?php } ?>
 <?php } ?>

@@ -47,25 +47,28 @@
                                     <div class="flipper">
                                         <div class="front">
                                             <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>">
-                                                <img src="<?php echo base_url($row['pro_feature']); ?>" alt="" class="img-responsive">
+                                                <img src="<?php echo base_url('upload/product/'.$row['pro_feature']); ?>" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
                                             <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>">
-                                                <img src="<?php echo base_url($row['pro_feature']); ?>" alt="" class="img-responsive">
+                                                <img src="<?php echo base_url('upload/product/'.$row['pro_feature']); ?>" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>" class="invisible">
-                                    <img src="<?php echo base_url($row['pro_feature']); ?>" alt="" class="img-responsive">
+                                    <img src="<?php echo base_url('upload/product/'.$row['pro_feature']); ?>" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
                                     <h3><a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>"><?php echo ($row['pro_name']); ?></a></h3>
                                     <p class="price">$<?php echo ($row['price']); ?></p>
                                     <p class="buttons">
                                         <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>" class="btn btn-default">View detail</a>
-                                        <a onclick="increment_quantity(<?php echo $lastcartid ?>,<?php echo $row['pro_id'] ?>)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        
+
+                                       <button type="button" name="add_cart" class="btn btn-primary add_cart" data-pro_name="<?php echo $row['pro_name'] ?>" data-price="<?php echo $row['price'] ?>" data-pro_id="<?php echo $row['pro_id'] ?>" data-pro_feature="<?php echo $row['pro_feature'] ?>" /><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                    
                                     </p>
                                 </div>
                                 <!-- /.text -->

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2018 at 05:25 AM
+-- Generation Time: Jun 13, 2018 at 02:48 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -19,6 +19,42 @@ SET time_zone = "+00:00";
 --
 -- Database: `phpproject`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `ip` varchar(250) DEFAULT NULL,
+  `pro_id` int(11) DEFAULT NULL,
+  `product` varchar(250) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `unit_price` float DEFAULT NULL,
+  `discount` decimal(10,0) DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  `image` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `ip`, `pro_id`, `product`, `qty`, `unit_price`, `discount`, `amount`, `image`) VALUES
+(17, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(18, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(19, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(20, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(21, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(22, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(23, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(24, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(25, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(26, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(27, '::1', 1, 'Almara', 1, 5, '3', '5', 'Almara.jpg'),
+(28, '::1', 3, 'Nestle', 1, 6, '17', '5', 'nestle.jpg');
 
 -- --------------------------------------------------------
 
@@ -145,8 +181,13 @@ CREATE TABLE `tbl_product` (
   `cat_id` int(11) DEFAULT NULL,
   `pro_name` varchar(250) DEFAULT NULL,
   `picture` varchar(250) DEFAULT NULL,
+  `picture2` varchar(250) DEFAULT NULL,
+  `picture3` varchar(250) DEFAULT NULL,
+  `picture4` varchar(250) DEFAULT NULL,
+  `picture5` varchar(250) DEFAULT NULL,
   `pro_detail` varchar(250) DEFAULT NULL,
   `price` varchar(250) DEFAULT NULL,
+  `discount` varchar(250) DEFAULT NULL,
   `pro_keyword` varchar(250) DEFAULT NULL,
   `col_id` varchar(250) DEFAULT NULL,
   `pro_status` enum('Y','N') DEFAULT 'Y'
@@ -156,37 +197,37 @@ CREATE TABLE `tbl_product` (
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`pro_id`, `cat_id`, `pro_name`, `picture`, `pro_detail`, `price`, `pro_keyword`, `col_id`, `pro_status`) VALUES
-(1, 5, 'Almara', 'Almara.jpg', NULL, '5', NULL, NULL, 'Y'),
-(2, 5, 'Milk', 'milk.jpg', NULL, '4', NULL, NULL, 'Y'),
-(3, 5, 'Nestle', 'nestle.jpg', NULL, '6', NULL, NULL, 'Y'),
-(4, 5, 'Soya', 'soya.jpg', NULL, '6', NULL, NULL, 'Y'),
-(5, 5, 'Fresh Milk', 'fresh_milk.jpg', NULL, '8', NULL, NULL, 'Y'),
-(6, 5, 'Fresh Milk Cow', '980.jpg', NULL, '5', NULL, NULL, 'Y'),
-(7, 1, '41enJA96pbL', '41enJA96pbL.jpg', NULL, '100', NULL, NULL, 'Y'),
-(8, 1, 'Asus-Zenfone-Selfie-Silver', 'Asus-Zenfone-Selfie-Silver.jpg', NULL, '200', NULL, NULL, 'Y'),
-(9, 1, 'Oppo-F5', 'Oppo-F5.jpg', NULL, '280', NULL, NULL, 'Y'),
-(10, 1, 'Oppo-f7-0ph1819-original', 'oppo-f7-cph1819-original.jpeg', NULL, '329', NULL, NULL, 'Y'),
-(11, 1, 'Red-me-pro-2', 'red-me-pro-2.jpg', NULL, '300', NULL, NULL, 'Y'),
-(12, 1, 'Samsung-Note8-Gold', 'Samsung-Note8-Gold.jpg', NULL, '780', NULL, NULL, 'Y'),
-(13, 2, 'Ladies one piece dress', 'ladies-one-piece-dress.jpg', NULL, '80', NULL, NULL, 'Y'),
-(14, 2, 'Ladies western wear', 'ladies-western-wear.jpg', NULL, '80', NULL, NULL, 'Y'),
-(15, 2, 'Fancy ladies designer suits', 'fancy-ladies-designer-suits.jpg', NULL, '80', NULL, NULL, 'Y'),
-(16, 2, 'Casual wear', 'casual-wear.jpg', NULL, '50', NULL, NULL, 'Y'),
-(17, 2, 'Western wear', 'western-wear.jpg', NULL, '70', NULL, NULL, 'Y'),
-(18, 2, 'Casual wear', 'casual-wear.jpg', NULL, '75', NULL, NULL, 'Y'),
-(19, 3, 'Kvg8 ansh fashion wear men', 'kvg8-ansh-fashion-wear-men.jpg', NULL, '50', NULL, NULL, 'Y'),
-(20, 3, 'Popular Royal Blue Men', 'Popular-Royal-Blue-Men.jpg', NULL, '45', NULL, NULL, 'Y'),
-(21, 3, 'ZYLUS15', 'ZYLUS15.jpg', NULL, '31', NULL, NULL, 'Y'),
-(22, 3, 'ZYLUS17', 'ZYLUS17.jpg', NULL, '32', NULL, NULL, 'Y'),
-(23, 3, 'Big man', 'Big_man.jpg', NULL, '25', NULL, NULL, 'Y'),
-(24, 3, 'Man', 'Man.jpeg', NULL, '30', NULL, NULL, 'Y'),
-(25, 4, '81ixXPOc vL UL', '81ixXPOc-vL._UL.jpg', NULL, '10', NULL, NULL, 'Y'),
-(26, 4, 'Free shipping springtime', 'Free-shipping-springtime.jpg', NULL, '9', NULL, NULL, 'Y'),
-(27, 4, 'unisex pre winter set', 'unisex-pre-winter-set.jpg', NULL, '9.50', NULL, NULL, 'Y'),
-(28, 4, 'kids wear', 'kids-wear.jpg', NULL, '7', NULL, NULL, 'Y'),
-(29, 4, 'Kid weare', 'Kid_weare.jpg', NULL, '8', NULL, NULL, 'Y'),
-(30, 4, 'gents.jpg', 'gents.jpg', NULL, '10.50', NULL, NULL, 'Y');
+INSERT INTO `tbl_product` (`pro_id`, `cat_id`, `pro_name`, `picture`, `picture2`, `picture3`, `picture4`, `picture5`, `pro_detail`, `price`, `discount`, `pro_keyword`, `col_id`, `pro_status`) VALUES
+(1, 5, 'Almara', 'Almara.jpg', 'Almara.jpg', 'Almara.jpg', 'Almara.jpg', 'Almara.jpg', NULL, '5', '2.5', NULL, NULL, 'Y'),
+(2, 5, 'Milk', 'milk.jpg', 'milk.jpg', 'milk.jpg', 'milk.jpg', 'milk.jpg', NULL, '4', '10', NULL, NULL, 'Y'),
+(3, 5, 'Nestle', 'nestle.jpg', 'nestle.jpg', 'nestle.jpg', 'nestle.jpg', 'nestle.jpg', NULL, '6', '16.5', NULL, NULL, 'Y'),
+(4, 5, 'Soya', '81ixXPOc-vL._UL.jpg', '81ixXPOc-vL._UL.jpg', '81ixXPOc-vL._UL.jpg', '81ixXPOc-vL._UL.jpg', '81ixXPOc-vL._UL.jpg', 'product detail', '6', '16.5', NULL, NULL, 'Y'),
+(5, 5, 'Fresh Milk', 'fresh_milk.jpg', NULL, NULL, NULL, NULL, NULL, '8', '16.5', NULL, NULL, 'Y'),
+(6, 5, 'Fresh Milk Cow', '980.jpg', NULL, NULL, NULL, NULL, NULL, '5', '16.5', NULL, NULL, 'Y'),
+(7, 1, '41enJA96pbL', '41enJA96pbL.jpg', NULL, NULL, NULL, NULL, NULL, '100', '16.5', NULL, NULL, 'Y'),
+(8, 1, 'Asus-Zenfone-Selfie-Silver', 'Asus-Zenfone-Selfie-Silver.jpg', NULL, NULL, NULL, NULL, NULL, '200', '16.5', NULL, NULL, 'Y'),
+(9, 1, 'Oppo-F5', 'Oppo-F5.jpg', NULL, NULL, NULL, NULL, NULL, '280', '16.5', NULL, NULL, 'Y'),
+(10, 1, 'Oppo-f7-0ph1819-original', 'oppo-f7-cph1819-original.jpeg', NULL, NULL, NULL, NULL, NULL, '329', '16.5', NULL, NULL, 'Y'),
+(11, 1, 'Red-me-pro-2', 'red-me-pro-2.jpg', NULL, NULL, NULL, NULL, NULL, '300', '16.5', NULL, NULL, 'Y'),
+(12, 1, 'Samsung-Note8-Gold', 'Samsung-Note8-Gold.jpg', NULL, NULL, NULL, NULL, NULL, '780', '16.5', NULL, NULL, 'Y'),
+(13, 2, 'Ladies one piece dress', 'ladies-one-piece-dress.jpg', NULL, NULL, NULL, NULL, NULL, '80', '16.5', NULL, NULL, 'Y'),
+(14, 2, 'Ladies western wear', 'ladies-western-wear.jpg', NULL, NULL, NULL, NULL, NULL, '80', '16.5', NULL, NULL, 'Y'),
+(15, 2, 'Fancy ladies designer suits', 'fancy-ladies-designer-suits.jpg', NULL, NULL, NULL, NULL, NULL, '80', '16.5', NULL, NULL, 'Y'),
+(16, 2, 'Casual wear', 'casual-wear.jpg', NULL, NULL, NULL, NULL, NULL, '50', '16.5', NULL, NULL, 'Y'),
+(17, 2, 'Western wear', 'western-wear.jpg', NULL, NULL, NULL, NULL, NULL, '70', '16.5', NULL, NULL, 'Y'),
+(18, 2, 'Casual wear', 'casual-wear.jpg', NULL, NULL, NULL, NULL, NULL, '75', '16.5', NULL, NULL, 'Y'),
+(19, 3, 'Kvg8 ansh fashion wear men', 'kvg8-ansh-fashion-wear-men.jpg', NULL, NULL, NULL, NULL, NULL, '50', '16.5', NULL, NULL, 'Y'),
+(20, 3, 'Popular Royal Blue Men', 'Popular-Royal-Blue-Men.jpg', NULL, NULL, NULL, NULL, NULL, '45', '16.5', NULL, NULL, 'Y'),
+(21, 3, 'ZYLUS15', 'ZYLUS15.jpg', NULL, NULL, NULL, NULL, NULL, '31', '16.5', NULL, NULL, 'Y'),
+(22, 3, 'ZYLUS17', 'ZYLUS17.jpg', NULL, NULL, NULL, NULL, NULL, '32', '16.5', NULL, NULL, 'Y'),
+(23, 3, 'Big man', 'Big_man.jpg', NULL, NULL, NULL, NULL, NULL, '25', '16.5', NULL, NULL, 'Y'),
+(24, 3, 'Man', 'Man.jpeg', NULL, NULL, NULL, NULL, NULL, '30', '16.5', NULL, NULL, 'Y'),
+(25, 4, '81ixXPOc vL UL', '81ixXPOc-vL._UL.jpg', NULL, NULL, NULL, NULL, NULL, '10', '16.5', NULL, NULL, 'Y'),
+(26, 4, 'Free shipping springtime', 'Free-shipping-springtime.jpg', NULL, NULL, NULL, NULL, NULL, '9', '16.5', NULL, NULL, 'Y'),
+(27, 4, 'unisex pre winter set', 'unisex-pre-winter-set.jpg', NULL, NULL, NULL, NULL, NULL, '9.50', '16.5', NULL, NULL, 'Y'),
+(28, 4, 'kids wear', 'kids-wear.jpg', NULL, NULL, NULL, NULL, NULL, '7', '16.5', NULL, NULL, 'Y'),
+(29, 4, 'Kid weare', 'Kid_weare.jpg', NULL, NULL, NULL, NULL, NULL, '8', '16.5', NULL, NULL, 'Y'),
+(30, 4, 'gents.jpg', 'gents.jpg', NULL, NULL, NULL, NULL, NULL, '10.50', '16.5', NULL, NULL, 'Y');
 
 -- --------------------------------------------------------
 
@@ -202,6 +243,12 @@ CREATE TABLE `tbl_product_category` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`);
 
 --
 -- Indexes for table `slide`
@@ -265,6 +312,11 @@ ALTER TABLE `tbl_product_category`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `slide`
 --

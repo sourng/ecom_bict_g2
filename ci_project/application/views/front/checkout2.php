@@ -11,7 +11,6 @@
  _________________________________________________________ -->
 <?php $this->load->view('includes/navbar'); ?>
     <!-- /#navbar -->
-
     <!-- *** NAVBAR END *** -->
 
     <div id="all">
@@ -23,43 +22,38 @@
                     <ul class="breadcrumb">
                         <li><a href="#">Home</a>
                         </li>
-                        <li>Checkout - Delivery method</li>
+                        <li>Checkout - Address</li>
                     </ul>
                 </div>
 
                 <div class="col-md-9" id="checkout">
 
                     <div class="box">
-                        <?php $this->load->view('includes/checkout_order_view2'); ?>
+                     <?php $this->load->view('includes/checkout_order2'); ?>
                     </div>
                     <!-- /.box -->
-
-
                 </div>
                 <!-- /.col-md-9 -->
 
                 <?php $this->load->view('includes/order_sumary'); ?>
-                <!-- /.col-md-3 -->
-
+               <!-- /.mcol-md-3 -->
             </div>
             <!-- /.container -->
         </div>
         <!-- /#content -->
 
-        <!-- *** FOOTER ***
- _________________________________________________________ -->
-        <?php $this->load->view('includes/footer'); ?>
-
+        <!-- *** FOOTER ***-->
+        <?php $this->load->view('includes/footer');?>
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-    <script src="<?php echo base_url('template'); ?>/js/jquery-1.11.0.min.js"></script>
-    <script src="<?php echo base_url('template'); ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('template'); ?>/js/jquery.cookie.js"></script>
-    <script src="<?php echo base_url('template'); ?>/js/waypoints.min.js"></script>
-    <script src="<?php echo base_url('template'); ?>/js/modernizr.js"></script>
-    <script src="<?php echo base_url('template'); ?>/js/bootstrap-hover-dropdown.js"></script>
-    <script src="<?php echo base_url('template'); ?>/js/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url('template'); ?>/js/front.js"></script>
+    <script src="<?php echo base_url('template');?>/js/jquery-1.11.0.min.js"></script>
+    <script src="<?php echo base_url('template');?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('template');?>/js/jquery.cookie.js"></script>
+    <script src="<?php echo base_url('template');?>/js/waypoints.min.js"></script>
+    <script src="<?php echo base_url('template');?>/js/modernizr.js"></script>
+    <script src="<?php echo base_url('template');?>/js/bootstrap-hover-dropdown.js"></script>
+    <script src="<?php echo base_url('template');?>/js/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url('template');?>/js/front.js"></script>
 </body>
 
 </html>
