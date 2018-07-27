@@ -4,16 +4,12 @@
 <body>
       <!-- *** TOPBAR *** -->
 <?php $this->load->view('includes/top_navbar'); ?>
-    <!-- *** TOP BAR END *** -->
-
+  <!-- *** TOP BAR END *** -->
   <!-- *** NAVBAR ***-->
 <?php $this->load->view('includes/navbar'); ?>
     <!-- /#navbar -->
-
     <!-- *** NAVBAR END *** -->
-
     <div id="all">
-
         <div id="content">
             <div class="container">
 
@@ -24,24 +20,15 @@
                         </li>
                         <li>Log In</li>
                     </ul>
-
                 </div>
                 <?php $this->load->view('includes/logins'); ?>
             </div>
             <!-- /.container -->
         </div>
         <!-- /#content -->
-
-
-        <!-- *** FOOTER ***
- _________________________________________________________ -->
+        <!-- *** FOOTER *** -->
        <?php $this->load->view('includes/footer'); ?>
-    
-
-    
-
-    <!-- *** SCRIPTS TO INCLUDE ***
- _________________________________________________________ -->
+    <!-- *** SCRIPTS TO INCLUDE *** -->
     <script src="<?php echo base_url('template'); ?>/js/jquery-1.11.0.min.js"></script>
     <script src="<?php echo base_url('template'); ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('template'); ?>/js/jquery.cookie.js"></script>
@@ -50,8 +37,6 @@
     <script src="<?php echo base_url('template'); ?>/js/bootstrap-hover-dropdown.js"></script>
     <script src="<?php echo base_url('template'); ?>/js/owl.carousel.min.js"></script>
     <script src="<?php echo base_url('template'); ?>/js/front.js"></script>
-
-
 
 </body>
 

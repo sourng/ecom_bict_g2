@@ -1,3 +1,4 @@
+
 <?php foreach ($lastcartid as $row) {
     $lastcartid=$row['lastcartid'];
 } ?>
@@ -40,7 +41,7 @@
                     </div>
 
                     <div class="row products">
-        <?php foreach ($product as $row) { ?>
+        <?php foreach ($results as $row) { ?>
                         <div class="col-md-4 col-sm-6">
                             <div class="product">
                                 <div class="flip-container">
@@ -67,7 +68,7 @@
                                         <a href="<?php echo site_url('detail.html?pro_id='.$row['pro_id']) ?>" class="btn btn-default">View detail</a>
                                         
 
-                                       <button type="button" name="add_cart" class="btn btn-primary add_cart" data-pro_name="<?php echo $row['pro_name'] ?>" data-price="<?php echo $row['price'] ?>" data-pro_id="<?php echo $row['pro_id'] ?>" data-pro_feature="<?php echo $row['pro_feature'] ?>" /><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                       <button type="button" name="add_cart" class="btn btn-primary add_cart" data-pro_name="<?php echo $row['pro_name'] ?>" data-price="<?php echo $row['price'] ?>" data-pro_id="<?php echo $row['pro_id'] ?>" data-pro_feature="<?php echo $row['pro_feature'] ?>" data-discount="<?php echo $row['discount']?>" /><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                                     
                                     </p>
                                 </div>
@@ -84,25 +85,11 @@
                         <p class="loadMore">
                             <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Load more</a>
                         </p>
-
-                        <ul class="pagination">
-                            <li><a href="#">&laquo;</a>
-                            </li>
-                            <li class="active"><a href="#">1</a>
-                            </li>
-                            <li><a href="#">2</a>
-                            </li>
-                            <li><a href="#">3</a>
-                            </li>
-                            <li><a href="#">4</a>
-                            </li>
-                            <li><a href="#">5</a>
-                            </li>
-                            <li><a href="#">&raquo;</a>
-                            </li>
-                        </ul>
+                      
+                            <?php echo $links ?>
+                       
                     </div>
 
 
                 </div>
-<?php $this->load->view('includes/function_js'); ?>
+<!-- <?php​​​ //$this->load->view('includes/function_js'); ?> -->

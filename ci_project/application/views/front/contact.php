@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php $this->load->view('includes/header'); ?>
+<style type="text/css">
+    .fa-whatsapp  {
+  color:#fff;
+  background:
+  linear-gradient(#25d366,#25d366)10px 84%/10px 9px no-repeat,
+  radial-gradient(circle at center, #25d366 63%,transparent 0);
+}
+</style>
 <body>
-    <!-- *** TOPBAR ***
- _________________________________________________________ -->
+    <!-- *** TOPBAR *** -->
    <?php $this->load->view('includes/top_navbar'); ?>
 
     <!-- *** TOP BAR END *** -->
 
-    <!-- *** NAVBAR ***
- _________________________________________________________ -->
+    <!-- *** NAVBAR *** -->
 
     <?php $this->load->view('includes/navbar'); ?>
     <!-- /#navbar -->
@@ -31,8 +37,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <!-- *** PAGES MENU ***
- _________________________________________________________ -->
+                    <!-- *** PAGES MENU ***-->
                     <div class="panel panel-default sidebar-menu">
 
                         <div class="panel-heading">
@@ -81,19 +86,19 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <h3><i class="fa fa-map-marker"></i> Address</h3>
-                                <p>13/25 New Avenue
-                                    <br>New Heaven
-                                    <br>45Y 73J
-                                    <br>England
+                                <p>8-10 Kilometre from City
+                                    <br>Siem Reap City
+                                    <br>6 Road
+                                    <br>Cambodia
                                     <br>
-                                    <strong>Great Britain</strong>
+                                    <strong>Great Shopping</strong>
                                 </p>
                             </div>
                             <!-- /.col-sm-4 -->
                             <div class="col-sm-4">
                                 <h3><i class="fa fa-phone"></i> Call center</h3>
                                 <p class="text-muted">This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication.</p>
-                                <p><strong>+33 555 444 333</strong>
+                                <p><strong>+855967585037</strong>
                                 </p>
                             </div>
                             <!-- /.col-sm-4 -->
@@ -101,9 +106,11 @@
                                 <h3><i class="fa fa-envelope"></i> Electronic support</h3>
                                 <p class="text-muted">Please feel free to write an email to us or to use our electronic ticketing system.</p>
                                 <ul>
-                                    <li><strong><a href="mailto:">info@fakeemail.com</a></strong>
-                                    </li>
-                                    <li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>
+                                    <li style="width: 25px; height: 100%;"class="fa fa-envelope"></li>phoykanha@gmail.com
+                                    <br>
+                                   
+                                    <li style="width: 15%; height: 100%;" class="fab fa-whatsapp fa-7x"></li>+855967585037<br>
+                                    <li style="width: 15%; height: 100%;" class="fab fa-telegram"></li>+855967585037
                                 </ul>
                             </div>
                             <!-- /.col-sm-4 -->
@@ -113,7 +120,8 @@
                         <hr>
 
                         <div class="col-sm-12">
-                            <iframe style="width: 100%; height: 500px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15524.979156752002!2d103.75245322074166!3d13.397163599241713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIzJzQ5LjgiTiAxMDPCsDQ1JzQwLjQiRQ!5e0!3m2!1sen!2sin!4v1524582723794" allowfullscreen></iframe>
+                           
+                        <iframe style="width: 100%; height: 500px;"​​​​ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1913.3458273694062!2d103.77065912163906!3d13.384374108018138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIzJzAzLjciTiAxMDPCsDQ2JzE5LjEiRQ!5e1!3m2!1sen!2sin!4v1531876795221" allowfullscreen></iframe>
                         </div>
 
                         <hr>
@@ -145,10 +153,7 @@
     <script src="<?php echo base_url(); ?>template/js/bootstrap-hover-dropdown.js"></script>
     <script src="<?php echo base_url(); ?>template/js/owl.carousel.min.js"></script>
     <script src="<?php echo base_url(); ?>template/js/front.js"></script>
-
-
-
-
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
 
     <script>

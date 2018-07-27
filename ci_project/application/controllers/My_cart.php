@@ -105,4 +105,18 @@ class My_cart extends CI_Controller {
         $data['cart']  = $this->cart->contents();
         $this->load->view("cart_modal", $data);
     }
-	}
+
+
+    public function creditcard()
+    {
+       
+        $this->load->view("includes/creditcard");
+    }
+
+     public function paypal()
+    {
+       
+        $this->load->view("includes/paypal");
+    }
+    
+}

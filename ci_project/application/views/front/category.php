@@ -54,30 +54,32 @@
             $(document).ready(function(){
              
              $('.add_cart').click(function(){
-              var pro_id = $(this).data("pro_id");
-              var pro_name = $(this).data("pro_name");
-              var price = $(this).data("price");
-              var pro_feature = $(this).data("pro_feature");
-              // var img = $(this).data("img");
+  var pro_id = $(this).data("pro_id");
+  var pro_name = $(this).data("pro_name");
+  var price = $(this).data("price");
+  var discount = $(this).data("discount");
+  var pro_feature = $(this).data("pro_feature");
+  // var img = $(this).data("img");
 
-              // var quantity = $('#' + product_id).val();
-              var quantity = 1;
-              if(quantity != '' && quantity > 0)
-              {
-               $.ajax({
-                url:"<?php echo base_url(); ?>shopping/add",
-                method:"POST",
-                data:{pro_id:pro_id, pro_name:pro_name, price:price, quantity:quantity,pro_feature:pro_feature},
-                success:function(data)
-                {
-                 alert("Product Added into Cart");
-                 $('#cart_details').html(data);
-                 $('#' + pro_id).val('');
+  // var quantity = $('#' + product_id).val();
+  var quantity = 1;
+  if(quantity != '' && quantity > 0)
+  {
+   $.ajax({
+    url:"<?php echo base_url(); ?>shopping/add",
+    method:"POST",
+    data:{pro_id:pro_id, pro_name:pro_name, price:price, discount:discount, quantity:quantity,pro_feature:pro_feature},
+    success:function(data)
+    {
+     alert("Product Added into Cart");
 
-                 $(".cartcount").text(data);
-                }
-               });
-              }
+     $('#cart_details').html(data);
+     $('#' + pro_id).val('');
+
+     $(".cartcount").text(data);
+    }
+   });
+  }
               else
               {
                alert("Please Enter quantity");
@@ -129,6 +131,16 @@
              });
 
             });
+</script>
+<script type="text/javascript">
+    $(document).on('click','li#num>a',function(){
+        var num = $(this).html();
+          if (num == 1) {
+            location.assign("<?php echo base_url('category.html/'.$this->uri->segment(2)); ?>/" + num);
+          }else if(num =='«'){
+            location.assign("<?php echo base_url('category.html/'.$this->uri->segment(2)); ?>/1");
+          }
+    })
 </script>
 </body>
 </html>

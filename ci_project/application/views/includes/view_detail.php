@@ -10,7 +10,7 @@
     <input type="hidden" name="id" id="<?php echo $row['pro_id']; ?>" value="<?php echo $row['pro_id']; ?>">
     <input type="hidden" name="pro_name" id="<?php echo $row['pro_name']; ?>" value="<?php echo $row['pro_name']; ?>">
 
-        <input type="hidden" name="price" id="<?php echo $row['price']; ?>" value="<?php echo $row['price']; ?>">
+    <input type="hidden" name="price" id="<?php echo $row['price']; ?>" value="<?php echo $row['price']; ?>">
     <input type="hidden" name="img" id="<?php echo $row['pro_feature']; ?>" value="<?php echo $row['pro_feature']; ?>">
      <input type="hidden" name="discount" id="<?php echo $row['discount']; ?>" value="<?php echo $row['discount']; ?>">
     
@@ -33,7 +33,7 @@
                                      <!-- <a onclick="increment_quantity(<?php  //echo $lastcartid?>,<?php // echo $row['pro_id'] ?>)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
                                     -->
 
-                                    <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
+                                    <a href="<?php echo site_url(); ?>basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
 
 
 

@@ -10,7 +10,7 @@
                                 <?php foreach ($category as $row) { ?>
 
                                 <li>
-                                    <a href="category.html?cat=<?php echo $row['cat_id'] ?>"><?php echo $row['cat_name'] ?></a>
+                                    <a href="<?php echo site_url('category.html/'.$row['cat_id'].'/1'); ?>"><?php echo $row['cat_name'] ?></a>
                                    
                                 </li>
                                 <?php } ?>

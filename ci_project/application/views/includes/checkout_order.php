@@ -11,85 +11,94 @@
         </li>
         <li class=""><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
         </li>
-    </ul>
+      </ul>
     <!-- tab 1 -->
-      <div class="tab">
+       <div class="tab">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="fname">Firstname</label>
+            <input placeholder="First name..." oninput="this.className = ''" name="fname">
+            
+            </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input placeholder="Last name..." oninput="this.className = ''" name="lname">
+          </div>
+            <div class="form-group">
+                <label for="country">Company</label>
+                <select class="form-control" name="company" id="company" required="">
+                    <option value="Travel Agent">Travel Agent</option>
+                    <option value="Education">Education</option>
+                    <option value="Banking">Banking</option>
+                </select>
+            </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input placeholder="Phone Number..." oninput="this.className = ''" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+           <input placeholder="Email..." oninput="this.className = ''" name="email">
+          </div>
+        </div>
+    
         <div class="col-md-6">
-        
           <div class="form-group">
-            <label for="fname">Firstname</label>
-          <input placeholder="First name..." oninput="this.className = ''" name="fname">
+            <label for="street">Street</label>
+          <input placeholder="Street..." oninput="this.className = ''" name="street">
           </div>
-        <div class="form-group">
-          <label for="lname">Last Name</label>
-          <input placeholder="Last name..." oninput="this.className = ''" name="lname">
-        </div>
           <div class="form-group">
-            <label for="company">Company</label>
-          <input placeholder="Company..." oninput="this.className = ''" name="company">
+            <label for="zip">Zip</label>
+          <input placeholder="Zip..." oninput="this.className = ''" name="zip">
           </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input placeholder="Phone Number..." oninput="this.className = ''" name="phone">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-         <input placeholder="Email..." oninput="this.className = ''" name="email">
-        </div>
-      </div>
-  
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="street">Street</label>
-        <input placeholder="Street..." oninput="this.className = ''" name="street">
-        </div>
-        <div class="form-group">
-          <label for="zip">Zip</label>
-        <input placeholder="Zip..." oninput="this.className = ''" name="zip">
-        </div>
+           <div class="form-group">
+                <label for="country">Country</label>
+                <select class="form-control" name="country" id="country" required="">
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Vietnam">Vietnam</option>
+                </select>
+            </div>
          <div class="form-group">
-          <label for="state">State</label>
-        <input placeholder="City..." oninput="this.className = ''" name="state">
+                <label for="country">States / City</label>
+                <select class="form-control" name="city" id="states" required="">
+                    <option value="Siem Reap">Siem Reap</option>
+                    <option value="Bangkok">Bangkok</option>
+                    <option value="Hochiming">Hochiming</option>
+                </select>
+            </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+           <input type="password" placeholder="Password for Email..." oninput="this.className = ''" name="password">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="country">Country</label>
-         <input placeholder="Country..." oninput="this.className = ''" name="country">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-         <input type="password" placeholder="Password for Email..." oninput="this.className = ''" name="password">
-        </div>
-      </div>
+      </div> 
     </div>
-    </div>
-
-
 <!-- tab 2 -->
   <div class="tab">
  <div class="row">
-    <div class="col-sm-6">
-        <div class="box payment-method">
 
-            <h4>USPS Next Day</h4>
-
+     <div class="col-sm-6">
+           <div class="box payment-method">
+             <h4>USPS Next Day</h4>
             <p>Get it right on next day - Bus.</p>
-
-            <div class="box-footer text-center">
-
-                <input type="radio" name="bus">
+             <div class="box-footer text-center">
+                <input type="radio" id="bus" name="delivery" checked />
+                <label for="bus">BUS</label>
+              </div>
             </div>
-        </div>
     </div>
     <div class="col-sm-6">
+
         <div class="box payment-method">
             <h4>USPS Next Day</h4>
 
             <p>Get it right on next day - Flight.</p>
 
             <div class="box-footer text-center">
-
-                <input type="radio" name="flight">
-            </div>
+        <input type="radio" id="flight" name="delivery" />
+        <label for="flight">Flight</label>
+             </div>
         </div>
 
     </div>
@@ -102,18 +111,33 @@
             <p>Get it right on next day - Cruise.</p>
 
             <div class="box-footer text-center">
+        <input type="radio" id="cruise" name="delivery" />
+        <label for="cruise">Cruise</label>
+     </div>
+        </div>
+    </div>
 
-                <input type="radio"  name="cruise" >
+<input type="text" name="delivery-type" id="delivery-type" value="Bus">
+           
+</div>
+</div>
+
+
+  <div class="tab">
+    <div class="row">
+     <div class="col-sm-6">
+        <div class="box payment-method">
+
+            <h4>Cash on delivery</h4>
+
+            <p>You pay when you get it.</p>
+
+            <div class="box-footer text-center">
+
+                <input type="radio" name="pay" id="cash" value="cash" checked>
             </div>
         </div>
     </div>
-</div>
-
-    <!-- <input placeholder="E-mail..." oninput="this.className = ''" name="email">
-    <input placeholder="Phone..." oninput="this.className = ''" name="phone"> -->
-  </div>
-  <div class="tab">
-    <div class="row">
     <div class="col-sm-6">
         <div class="box payment-method">
 
@@ -123,72 +147,52 @@
 
             <div class="box-footer text-center">
 
-                <input type="radio" name="paypal">
+                <input type="radio" name="pay" id="paypal" value="paypal">
             </div>
         </div>
     </div>
     <div class="col-sm-6">
         <div class="box payment-method">
 
-            <h4>Payment gateway</h4>
+            <h4>Payment Credit Crd</h4>
 
             <p>VISA and Mastercard only.</p>
 
             <div class="box-footer text-center">
 
-                <input type="radio" name="mastercard">
+                <input type="radio" name="pay" id="creditcard" value="mastercard">
             </div>
         </div>
     </div> 
-    <div class="col-sm-6">
-        <div class="box payment-method">
-
-            <h4>Cash on delivery</h4>
-
-            <p>You pay when you get it.</p>
-
-            <div class="box-footer text-center">
-
-                <input type="radio" name="cash">
-            </div>
-        </div>
-    </div>
-     <!-- <div class="col-sm-6">
-        <div class="box payment-method">
-
-            <h4>Enter Your Card Number</h4>
-              <input placeholder="Enter Your Card Number" oninput="this.className = ''" name="cart_number">
-              <label for="confirm">Confirm Card Number</label>
-              <input placeholder="Confirm Card Number" oninput="this.className = ''" name="con_number">
-              <label for="cvv">Enter CVV</label>
-              <input placeholder="CVV" oninput="this.className = ''" name="cvv">
-        </div>
-    </div> -->
+   
 </div>
-    <!-- <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-    <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p> -->
-  </div>
-  <!-- tab 3 -->
-<div class="tab">
-  <!-- <div class="col-md-9" id="basket"> -->
-     <!--  <div class="box"> -->
-          <!-- <form method="post" action="<?php //echo site_url();?> checkout1.html"> -->
-              <p class="text-muted">You currently have <?php  echo count($this->cart->contents());  ?> item(s) in your cart.</p>
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th colspan="2">Product</th>
-                              <th>Quantity</th>
-                              <th>Unit price</th>
-                              <!-- <th>Discount</th> -->
-                              <th >Total</th>
-                              <th>Remove</th>
+</div>
 
-                          </tr>
-                      </thead>
-                      <tbody>
+<div id="load-pay"></div>
+
+<!-- <input type="hidden" name="namecard" value="<?php // $_POST['namecard']; ?>">
+<input type="hidden" name="card_number" value="<?php //echo $_POST['card_number']; ?>">
+<input type="hidden" name="cvv" value="<?php// echo $_POST['cvv']; ?>">
+<input type="hidden" name="holdername" value="<?php //echo $_POST['holdername']; ?>">
+<input type="hidden" name="valid_date" value="<?php// echo $_POST['valid_date']; ?>">
+ -->
+
+<div class="tab">
+<p class="text-muted">You currently have <?php  echo count($this->cart->contents());  ?> item(s) in your cart.</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="2">Product</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+                <!-- <th>Discount</th> -->
+                <th >Total</th>
+                <th>Remove</th>
+
+            </tr>
+        </thead>
+        <tbody>
           
               <div class="">
                    <?php 
@@ -246,25 +250,7 @@
                   </table>
 
               </div>
-              <!-- /.table-responsive -->
-             <!--  <div class="box-footer">
-                  <div class="pull-left">
-                      <a href="<?php //echo site_url(); ?>category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
-                  </div>
-                  <div class="pull-right">
-                      <button class="btn btn-default"><i class="fa fa-refresh"></i> Update basket</button>
-                      <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i>
-                                      </button>
-                  </div>
-              </div> -->
-          <!-- </form> -->
-      <!-- </div> -->
-      <!-- /.box -->
-  <!-- </div> -->
- 
 </div>
-    <!-- <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-    <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p> -->
   <div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -277,9 +263,11 @@
     <span class="step"></span>
     <span class="step"></span>
     <span class="step"></span>
+    <span class="step"></span>
+    
   </div>
 </form>
-
+<script src="<?php echo base_url('');?>template/js/jquery-1.11.0.min.js"></script>
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
@@ -404,4 +392,18 @@ var subtotal = $('.subtotal'+rowid).text();
             }
         });
 }
+$('input[type="radio"]').click(function (e) {
+    var id = e.target.id;
+    if (id == 'creditcard' || id == 'paypal') {
+       $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('my_cart/');?>" + id,
+                success: function (data) {
+                      $('#load-pay').html(data);       
+                }
+            });
+    }else if(id =='cruise' || id =='flight' || id == 'bus'){
+      $('#delivery-type').val(id);
+    }
+})
 </script>

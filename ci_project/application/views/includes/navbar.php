@@ -15,7 +15,7 @@
                         <span class="sr-only">Toggle search</span>
                         <i class="fa fa-search"></i>
                     </button>
-                    <a class="btn btn-default navbar-toggle" href="basket.html">
+                    <a class="btn btn-default navbar-toggle" href="<?php echo base_url(); ?>basket.html">
                         <i class="fa fa-shopping-cart"></i>  <span class="cartcount"></span> items in cart
                     </a>
                 </div>
@@ -37,7 +37,7 @@
                                             <h5>Clothing</h5>
                                             <ul>
                                                 <?php foreach ($category as $row) {?>
-                                                <li><a href="<?php echo site_url('category.html/?cat='.$row['cat_id']); ?>"><?php echo $row['cat_name'] ?></a>
+                                                <li><a href="<?php echo site_url('category.html/'.$row['cat_id'].'/1'); ?>"><?php echo $row['cat_name'] ?></a>
                                                 </li>
                                                <?php } ?>
                                             </ul>
@@ -177,7 +177,7 @@
                     </li>
 
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Category <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -236,6 +236,16 @@
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="<?php echo site_url(); ?>basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="cartcount"><?php echo count($this->cart->contents()); ?> </span> items in cart</a>
                 </div>
+
+
+
+<!-- 
+
+                <div class="navbar-collapse collapse right" id="basket-overview">
+                    <a href="<?php //echo site_url(); ?>home/basket" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>
+      Cart ( <span class="cartcount"><?php //echo count($this->cart->contents());  ?></span> )
+    </span> Items</a>
+                </div> -->
                 <!--/.nav-collapse -->
 
                 <div class="navbar-collapse collapse right" id="search-not-mobile">

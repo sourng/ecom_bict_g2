@@ -64,8 +64,10 @@ $route['detail.html'] = 'front/detail';
 $route['customer_orders.html'] = 'front/customer_orders';
 $route['customer-account.html'] = 'front/customer_account';
 $route['basket.html'] = 'front/basket';
-$route['category.html'] = 'front/category';
+$route['category.html/(:any)/(:any)'] = 'front/category/$1/$2';
+
 $route['checkout1.html'] = 'front/checkout1';
 $route['checkout2.html'] = 'front/checkout2';
 $route['checkout3.html'] = 'front/checkout3';
 $route['checkout4.html'] = 'front/checkout4';
+

@@ -25,5 +25,14 @@ class M_Crud extends CI_Model {
 				$results = $query->result_array();
 			return $results;	
 		}
-	}  
+	}
+
+
+
+
+
+
+
+
+
 }
